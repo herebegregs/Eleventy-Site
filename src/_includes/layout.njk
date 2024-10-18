@@ -6,21 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles.css">
   <!-- Grab title from the page data and dump it here -->
-  <title>The Best Eleventy Demo TM</title>
+  <title>{{ title }}</title>
 </head>
 <body>
   <!-- Grab the content from the page data, dump it here, and mark it as safe -->
   <!-- Safe docs: https://mozilla.github.io/nunjucks/templating.html#safe -->
-  # Yo Eleventy
-
-This site rocks.
-
-Let's add a layout and some stylez next.
-
-<ul>
-
-  <li><a href="/blog/welcome/">Welcome to my blog</a></li>
-
-</ul>
+  {{ content | safe }}
 </body>
 </html>

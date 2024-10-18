@@ -1,0 +1,15 @@
+---
+layout: layout.njk
+title: The Best Eleventy Demo TM
+---
+# Yo Eleventy
+
+This site rocks.
+
+Let's add a layout and some stylez next.
+
+<ul>
+{% for post in collections.blog %}
+  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+{% endfor %}
+</ul>
