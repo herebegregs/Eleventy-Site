@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "watch:sass": "sass --watch src/_includes/scss:_site",
-    "build:sass": "sass src/_includes/scss:_site",
+    "watch:sass": "sass --watch src/scss:_site",
+    "build:sass": "sass src/scss:_site",
     "watch:eleventy": "eleventy --serve",
     "build:eleventy": "eleventy",
     "start": "npm-run-all build:sass --parallel watch:*",

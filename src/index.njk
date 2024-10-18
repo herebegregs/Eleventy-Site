@@ -1,15 +1,11 @@
 ---
-layout: layout.njk
+layout: document.njk
 title: The Best Eleventy Demo TM
 ---
-# Yo Eleventy
+<h1>Yo Eleventy</h1>
 
-This site rocks.
+<p>This site rocks.</p>
 
-Let's add a layout and some stylez next.
+{% include "partials/test.njk" %}
 
-<ul>
-{% for post in collections.blog %}
-  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
-{% endfor %}
-</ul>
+<p>Let's add a layout and some stylez next. </p>

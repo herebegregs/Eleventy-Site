@@ -1,0 +1,58 @@
+$transition-std: 0.2s all ease-in;
+
+$vapor-pink: #ff71ce;
+$vapor-blue: #01cdfe;
+$vapor-green: #05ffa1;
+$vapor-purple: #b967ff;
+$vapor-yellow: #fffb96;
+$vapor-pink-pastel: #ffcfea;
+$vapor-blue-pastel: #afe9ff;
+$vapor-green-pastel: #cbffe6;
+$vapor-purple-pastel: #bfb9ff;
+$vapor-yellow-pastel: #feffbe;
+
+html {
+    font-size: 10px;
+}
+body {
+    font-size: 1.6rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    * {
+        font-size: 1.6rem;
+        margin: 0;
+    }
+    // &:before {
+    //     content: "";
+    //     position: absolute;
+    //     height: 100vh;
+    //     width: 100vw;
+    //     top: 0;
+    //     left: 0;
+    //     background-color: rgba($vapor-pink, 0.3);
+    // }
+    .nav-bar {
+        flex: 0 0 100%;
+        padding: 0 10px;
+        background-color: grey;
+        position: relative;
+        margin-top: auto;
+        .start-button {
+            display: flex;
+            padding: 5px;
+            gap: 5px;
+            align-items: center;
+            img {
+                height: 2rem;
+            }
+        }
+    }
+}
+
+.red {
+    background-color: red;
+    height: 100px;
+    width: 100px;
+}

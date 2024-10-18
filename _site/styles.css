@@ -1,5 +1,39 @@
+html {
+  font-size: 10px;
+}
+
 body {
-  background-color: beige;
+  font-size: 1.6rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+body * {
+  font-size: 1.6rem;
+  margin: 0;
+}
+body .nav-bar {
+  flex: 0 0 100%;
+  padding: 0 10px;
+  background-color: grey;
+  position: relative;
+  margin-top: auto;
+}
+body .nav-bar .start-button {
+  display: flex;
+  padding: 5px;
+  gap: 5px;
+  align-items: center;
+}
+body .nav-bar .start-button img {
+  height: 2rem;
+}
+
+.red {
+  background-color: red;
+  height: 100px;
+  width: 100px;
 }
 
 /*# sourceMappingURL=styles.css.map */

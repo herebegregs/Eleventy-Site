@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/styles.css">
-  <!-- Grab title from the page data and dump it here -->
-  <title>The Best Eleventy Demo TM</title>
-</head>
-<body>
-  <!-- Grab the content from the page data, dump it here, and mark it as safe -->
-  <!-- Safe docs: https://mozilla.github.io/nunjucks/templating.html#safe -->
-  # Yo Eleventy
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/noramlize.css">
+		<link rel="stylesheet" href="/styles.css">
+		<!-- Grab title from the page data and dump it here -->
+		<title>The Best Eleventy Demo TM</title>
+	</head>
+	<body>
+		<!-- Grab the content from the page data, dump it here, and mark it as safe -->
+		<!-- Safe docs: https://mozilla.github.io/nunjucks/templating.html#safe -->
+		<h1>Yo Eleventy</h1>
 
-This site rocks.
+<p>This site rocks.</p>
 
-Let's add a layout and some stylez next.
+<div class="red"></div>
 
-<ul>
-
-  <li><a href="/blog/welcome/">Welcome to my blog</a></li>
-
-</ul>
-</body>
+<p>Let's add a layout and some stylez next. </p>
+		<nav>
+			<ul>
+				
+					<li><a href="/blog/welcome/">Welcome to my blog</a></li>
+				
+			</ul>
+		</nav>
+		<div class="nav-bar"><button class="start-button"><img src="/images/95Logo.png"/>Start</button></div>
+	</body>
+	<script src="/bundle.js"></script>
 </html>
