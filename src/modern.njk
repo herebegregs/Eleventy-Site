@@ -1,0 +1,18 @@
+---
+layout: modern.njk
+title: Greg Morris
+---
+<div class="page-tab" id="modern-menu">
+    <div class="page-content">
+        <h1>This is a menu</h1>
+        <ul>
+            <li><a href="/">Back to '95!</a></li>
+        </ul>
+    </div>
+    <div class="page-edge">
+        {% svgIcon "_site/images/icons/menu.svg" %}
+    </div>
+</div>
+{% for nav in navigation.pages %}
+    {% include "./content/modern-"+nav.var+".njk" %}
+{% endfor %}

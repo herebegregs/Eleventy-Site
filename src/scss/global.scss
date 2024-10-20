@@ -1,0 +1,22 @@
+@use './variables.scss' as *;
+
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.6rem;
+    * {
+        font-size: 1.6rem;
+        margin: 0;
+        padding: 0;
+    }
+    a {
+        text-decoration: none;
+    }
+    button {
+        -webkit-appearance: none;
+        appearance: none;
+        outline: none;
+        border: none;
+    }
+}    

@@ -1,0 +1,276 @@
+@use './variables.scss' as *;
+
+.windows {
+    font-family:W95, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: $win-desktop;
+    line-height: normal;
+    // &:before {
+    //     content: "";
+    //     position: absolute;
+    //     height: 100vh;
+    //     width: 100vw;
+    //     top: 0;
+    //     left: 0;
+    //     background-color: rgba($vapor-pink, 0.3);
+    // }
+    #task-bar {
+        flex: 0 0 100%;
+        padding: 5px 10px 5px 5px;
+        background-color: $win-menu;
+        position: relative;
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 2px solid #fff;
+        #start-button {
+            display: flex;
+            padding: 3px 5px;
+            gap: 5px;
+            align-items: center;
+            background-color: $win-menu;
+            position: relative;
+            z-index: 1;
+            border: 2px solid;
+            border-color: #ffffff $win-menu-dark $win-menu-dark #ffffff;
+            line-height: normal;
+            outline: 1px solid #000000;
+            font-weight: bold;
+        }
+        #start-menu {
+            display: none;
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            padding: 2px;
+            background-color: $win-menu;
+            border: 2px solid;
+            border-color: #ffffff $win-menu-dark $win-menu-dark #ffffff;
+            min-height: 300px;
+            min-width: 200px;
+            .sidebar {
+                background-color: $win-menu-dark;
+                padding: 2px;
+                writing-mode: tb-rl;
+                transform: rotate(-180deg);
+                span {
+                    color: #fff;
+                    &.large {
+                        font-size: 3rem;
+                        font-weight: bold;
+                    }
+                    &.small {
+                        font-size: 3rem;
+                        font-weight: light;
+                    }
+                }
+            }
+            .main-menu {
+                width: 100%;
+                .menu-list {
+                    >li{
+                        position: relative;
+                        >button {
+                            width: 100%;
+                            background-color: $win-menu;
+                            padding: 2px 0 2px 15px;
+                            display: flex;
+                            align-items: center;
+                            gap: 15px;
+                            cursor: default;
+                            span {
+                                color: #000;
+                                &:first-letter {
+                                    text-decoration:underline;
+                                }
+                            }
+                            &:hover {
+                                background-color: $win-blue;
+                                span {
+                                    color: #fff;
+                                }
+                                svg {
+                                    path {
+                                        fill: #fff;
+                                    }
+                                }
+                            }
+                        }
+                        &.has-menu {
+                            .sub-menu {
+                                display: none;
+                                background-color: $win-menu;
+                                border: 2px solid;
+                                border-color: #ffffff $win-menu-dark $win-menu-dark #ffffff;
+                                position: absolute;
+                                left: 100%;
+                                top: -2px;
+                                >li {
+                                    button {
+                                        width: 100%;
+                                        background-color: $win-menu;
+                                        white-space: nowrap;
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 5px;
+                                        padding: 3px 5px;
+                                        cursor: default;
+                                        font-size: 1.4rem;
+                                        span {
+                                            color: #000;
+                                            &:first-letter {
+                                                text-decoration:underline;
+                                            }
+                                        }
+                                        &:hover {
+                                            background-color: $win-blue;
+                                            span {
+                                                color: #fff;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &:has(button:hover){
+                                >button {
+                                    background-color: $win-blue;
+                                    span {
+                                        color: #fff;
+                                    }
+                                    svg {
+                                        path {
+                                            fill: #fff;
+                                        }
+                                    }
+                                }
+                            }
+                            &:hover {
+                                .sub-menu {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+                svg {
+                    margin-left: auto;
+                    height: 20px;
+                }
+            }
+            ul {
+                list-style: none;
+            }
+        }
+        #clock {
+            border-color: $win-menu-dark #ffffff #ffffff $win-menu-dark;
+            border-style: inset;
+            padding: 3px 5px;
+        }
+        &.start-open {
+            #start-button {
+                border-style: inset;
+                border-color: $win-menu-dark #ffffff #ffffff $win-menu-dark;
+            }
+            #start-menu {
+                display: flex;
+            }
+        }
+    }
+
+    .desktop {
+        flex-grow: 1;
+        display: grid;
+        grid-auto-columns: 70px;
+        grid-auto-rows: 70px;
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .desktop-icon {
+        padding: 5px 0;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: transparent;
+        gap: 10px;
+        img, p {
+            border: 1px solid transparent;
+        }
+        p {
+            color: #fff;
+            text-shadow: 1px 1px 1px #000;
+        }
+        &.active {
+            img, p {
+                border: 1px dotted;
+            }
+            p {
+                background-color: $win-blue;
+            }
+        }
+
+        
+    }
+    .win-icon {
+        height: 2rem;
+    }
+    .start-icon {
+        height: 3rem;
+    }
+    .desktop-icon-img {
+        height: 3.5rem;
+    }
+    .window {
+        border: 3px solid;
+        border-color: #ffffff $win-menu $win-menu #ffffff;
+        background-color: $win-menu;
+        width: 50vw;
+        height: 50vh;
+        color: #fff;
+        font-weight: bold;
+        position: fixed;
+        flex-direction: column;
+        display: none;
+        .title-bar {
+            padding: 3px;
+            background-color: $win-blue;
+            border-bottom: 2px solid $win-menu;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 5px;
+            flex-shrink: 0;
+            flex-grow: 0;
+            .window-close {
+                background-color: $win-menu;
+                padding: 3px;
+                width: 13px;
+                height: 13px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                border-color: #ffffff $win-menu-dark $win-menu-dark #ffffff;
+                svg {
+                    height: 13px;
+                }
+            }
+        }
+        .window-content {
+            flex-grow: 1;
+            background-color: #fff;
+            border-style: inset;
+            border: 3px solid;
+            border-color: $win-menu-dark #ffffff #ffffff $win-menu-dark;
+            color: #000;
+            padding: 5px;
+        }
+        &.open {
+            display: flex;
+        }
+    }
+}

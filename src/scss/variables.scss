@@ -1,0 +1,30 @@
+@font-face {
+	font-family: W95;
+	src: url('/fonts/w95fa.woff2') format('woff2');
+	font-display: swap;
+}
+
+$transition-std: 0.2s all ease-in;
+
+$vapor-pink: #ff71ce;
+$vapor-blue: #01cdfe;
+$vapor-green: #05ffa1;
+$vapor-purple: #b967ff;
+$vapor-yellow: #fffb96;
+$vapor-pink-pastel: #ffcfea;
+$vapor-blue-pastel: #afe9ff;
+$vapor-green-pastel: #cbffe6;
+$vapor-purple-pastel: #bfb9ff;
+$vapor-yellow-pastel: #feffbe;
+
+//Windows
+
+$win-desktop: #018281;
+$win-menu: #c0c0c0;
+$win-menu-dark: #808080;
+$win-blue: #000080;
+
+
+//Modern
+
+$blue: #203e76;

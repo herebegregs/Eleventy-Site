@@ -1,11 +1,48 @@
 ---
-layout: document.njk
-title: The Best Eleventy Demo TM
+layout: windows.njk
+title: Greg Morris
 ---
-<h1>Yo Eleventy</h1>
+<div class="desktop">
+    <button class="desktop-icon" data-target="about-window">
+        <img class="desktop-icon-img" src="images/about.png"/>
+        <p>About Me</p>
+    </button>
+    <button class="desktop-icon" data-target="links-window">
+        <img class="desktop-icon-img" src="images/about.png"/>
+        <p>Links</p>
+    </button>
+</div>
 
-<p>This site rocks.</p>
-
-{% include "partials/test.njk" %}
-
-<p>Let's add a layout and some stylez next. </p>
+<div id="about-window" class="window">
+    {% include "./content/windows-about-me.njk" %}
+</div>
+<div id="links-window" class="window">
+    {% include "./content/windows-links.njk" %}
+</div>
+<div id="task-bar">
+    <nav id="start-menu">
+        <div class="sidebar">
+            <span class="large">Greg </span>
+            <span class="small">Morris</span>
+        </div>
+        <div class="main-menu">
+            <ul class="menu-list">
+                <li><button href="#" data-target="about-window"><img class="start-icon" src="/images/about.png"/><span>About Me</span></button></li>
+                <li class="has-menu">
+                    <button href="#">
+                    <img class="start-icon" src="/images/blogs.png"/>
+                    <span>Blogs</span>
+                    {% svgIcon "_site/images/icons/angle-right.svg" %}
+                    </button>
+                    <ul class="sub-menu">
+                        {% for post in collections.blog %}
+                            <li><button href="#"><img class="win-icon" src="/images/95Logo.png"/><span>{{ post.data.title }}<span></button></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <button id="start-button"><img class="win-icon" src="/images/95Logo.png"/>Start</button>
+    <div id="clock"></div>
+</div>

@@ -1,0 +1,10 @@
+    <div class="title-bar">
+        {% block windowTitle %}{% endblock %}
+        <div class="window-close">
+            {% svgIcon "_site/images/icons/close.svg" %}
+        </div>
+            
+    </div>
+    <div class="window-content">
+        {% block windowContent %}{% endblock%}
+    </div>

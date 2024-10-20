@@ -1,0 +1,21 @@
+{
+    "pages": [
+        {
+            "title": "About Me",
+            "url": "/about-me",
+            "var": "about-me"
+        },
+        {
+            "title": "Portfolio",
+            "url": "/portfolio",
+            "var": "portfolio"
+        }
+    ],
+    "links": [
+        {
+            "title": "Github",
+            "url": "https://www.github.com",
+            "var": "github"
+        }
+    ]
+}

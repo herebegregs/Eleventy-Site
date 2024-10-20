@@ -1,0 +1,124 @@
+@font-face {
+  font-family: W95;
+  src: url("/fonts/w95fa.woff2") format("woff2");
+  font-display: swap;
+}
+.modern {
+  min-height: 100vh;
+  background: rgb(0, 0, 0);
+  background: radial-gradient(circle at left top, #040615 0%, #040615 75%, #203e76 100%);
+  color: #fff;
+}
+.modern h1 {
+  font-size: 3.4rem;
+}
+.modern h1.super-size {
+  font-size: 6.8rem;
+}
+.modern h2 {
+  font-size: 3rem;
+}
+.modern h2.super-size {
+  font-size: 6rem;
+}
+.modern h3 {
+  font-size: 2.6rem;
+}
+.modern h3.super-size {
+  font-size: 5.2rem;
+}
+.modern h4 {
+  font-size: 2.2rem;
+}
+.modern h4.super-size {
+  font-size: 4.4rem;
+}
+.modern h5 {
+  font-size: 1.8rem;
+}
+.modern h5.super-size {
+  font-size: 3.6rem;
+}
+.modern p.super-size {
+  font-size: 3.2rem;
+}
+.modern .page-tab {
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  inset: 0 0 0 0;
+  align-items: flex-start;
+  transition: 0.2s all ease-in;
+  transform: translateX(calc(-100% + 42px));
+  pointer-events: none;
+  filter: drop-shadow(0px 0px 10px #203e76);
+  width: calc(100dvw - 70px);
+}
+.modern .page-tab .page-edge {
+  border: 2px solid #203e76;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: 2px solid transparent;
+  padding: 10px;
+  position: relative;
+  margin: 5px 0;
+  z-index: 1;
+  background: rgba(102, 67, 204, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  pointer-events: all;
+  min-height: 200px;
+}
+.modern .page-tab .page-edge span {
+  writing-mode: vertical-lr;
+  transform: translateY(5px);
+}
+.modern .page-tab .page-content {
+  position: relative;
+  background-color: #000;
+  z-index: 0;
+  flex-grow: 1;
+  height: 100%;
+  background: rgba(102, 67, 204, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 30px 30px 30px 30px;
+  border-left: none;
+}
+.modern .page-tab:before {
+  content: "";
+  width: 70px;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -70px;
+  background: rgba(102, 67, 204, 0.25);
+  backdrop-filter: blur(4px);
+}
+.modern .page-tab.open {
+  transform: translateX(55px);
+  pointer-events: all;
+}
+.modern .page-tab.open:before {
+  pointer-events: none;
+}
+.modern .page-tab:first-of-type .page-edge {
+  margin-top: 0;
+}
+.modern .page-tab:last-of-type .page-edge {
+  margin-bottom: 0;
+}
+.modern #modern-menu .page-edge {
+  min-height: 0;
+}
+.modern #modern-menu svg {
+  height: 25px;
+  width: 25px;
+}
+.modern #modern-menu svg path {
+  stroke: #fff;
+}
+
+/*# sourceMappingURL=modern.css.map */

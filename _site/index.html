@@ -4,44 +4,103 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="css/noramlize.css">
-		<link rel="stylesheet" href="/styles.css">
-		<!-- Grab title from the page data and dump it here -->
-		<title>The Best Eleventy Demo TM</title>
+		<link rel="stylesheet" href="/css/noramlize.css">
+		<link rel="stylesheet" href="/css/global.css">
+		<link rel="stylesheet" href="/css/windows.css">
+		<title>Greg Morris</title>
 	</head>
-	<body>
-		<!-- Grab the content from the page data, dump it here, and mark it as safe -->
-		<!-- Safe docs: https://mozilla.github.io/nunjucks/templating.html#safe -->
-		<h1>Yo Eleventy</h1>
+	<body class="windows">
+		<div class="desktop">
+    <button class="desktop-icon" data-target="about-window">
+        <img class="desktop-icon-img" src="images/about.png"/>
+        <p>About Me</p>
+    </button>
+    <button class="desktop-icon" data-target="links-window">
+        <img class="desktop-icon-img" src="images/about.png"/>
+        <p>Links</p>
+    </button>
+</div>
 
-<p>This site rocks.</p>
+<div id="about-window" class="window">
+        <div class="title-bar">
+        
+About Me
 
-<div class="red"></div>
+        <div class="window-close">
+            <?xml version="1.0" encoding="utf-8"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" fill="none" width="24" height="24"/>
+<g>
+<path d="M18.36 19.78L12 13.41l-6.36 6.37-1.42-1.42L10.59 12 4.22 5.64l1.42-1.42L12 10.59l6.36-6.36 1.41 1.41L13.41 12l6.36 6.36z"/>
+</g>
+</svg>
+        </div>
+            
+    </div>
+    <div class="window-content">
+        
+<h1>Hi, I&#39;m Greg</h1>
 
-<p>Let's add a layout and some stylez next. </p>
-		<div class="nav-bar">
-			<nav id="start-menu">
-				<div class="sidebar">
-					<span class="large">Greg </span>
-					<span class="small">Morris</span>
-				</div>
-				<div class="main-menu">
-					<ul class="menu-list">
-						<li class="has-menu">
-							<img class="start-icon" src="images/blogs.png"/>
-							Blogs
-							<ul class="sub-menu">
-								
-									<li><img class="win-icon" src="images/95Logo.png"/><a href="/blog/welcome/">Welcome to my blog</a></li>
-								
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</nav>
-			<button class="start-button"><img class="win-icon" src="images/95Logo.png"/>Start</button>
-			<div id="clock"></div>
-		</div>
+    </div>
+</div>
+<div id="links-window" class="window">
+        <div class="title-bar">
+        
+        <div class="window-close">
+            <?xml version="1.0" encoding="utf-8"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" fill="none" width="24" height="24"/>
+<g>
+<path d="M18.36 19.78L12 13.41l-6.36 6.37-1.42-1.42L10.59 12 4.22 5.64l1.42-1.42L12 10.59l6.36-6.36 1.41 1.41L13.41 12l6.36 6.36z"/>
+</g>
+</svg>
+        </div>
+            
+    </div>
+    <div class="window-content">
+        
+<h1>these are some links</h1>
+
+    </div>
+</div>
+<div id="task-bar">
+    <nav id="start-menu">
+        <div class="sidebar">
+            <span class="large">Greg </span>
+            <span class="small">Morris</span>
+        </div>
+        <div class="main-menu">
+            <ul class="menu-list">
+                <li><button href="#" data-target="about-window"><img class="start-icon" src="/images/about.png"/><span>About Me</span></button></li>
+                <li class="has-menu">
+                    <button href="#">
+                    <img class="start-icon" src="/images/blogs.png"/>
+                    <span>Blogs</span>
+                    <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 24 24" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+</style>
+<path d="M9,18l7-6L9,6V18z"/>
+<rect class="st0" width="24" height="24"/>
+<rect class="st0" width="24" height="24"/>
+</svg>
+                    </button>
+                    <ul class="sub-menu">
+                        
+                            <li><button href="#"><img class="win-icon" src="/images/95Logo.png"/><span>Welcome to my blog<span></button></li>
+                        
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <button id="start-button"><img class="win-icon" src="/images/95Logo.png"/>Start</button>
+    <div id="clock"></div>
+</div>
 	</body>
-	<script src="/js/main.js"></script>
+	<script src="/js/windows.js"></script>
 </html>

@@ -1,0 +1,129 @@
+@use './variables.scss' as *;
+
+.modern {
+    min-height: 100vh;
+    background: rgb(0,0,0);
+    background: radial-gradient(circle at left top, rgba(#040615,1) 0%, rgba(#040615,1) 75%, rgba($blue,1) 100%);
+    color: #fff;
+    h1 {
+        font-size: 3.4rem;
+        &.super-size {
+            font-size: 6.8rem;
+        }
+    }
+    h2 {
+        font-size: 3rem;
+        &.super-size {
+            font-size: 6rem;
+        }
+    }
+    h3{
+        font-size: 2.6rem;
+        &.super-size {
+            font-size: 5.2rem;
+        }
+    } 
+    h4{
+        font-size: 2.2rem;
+        &.super-size {
+            font-size: 4.4rem;
+        }
+    } 
+    h5{
+        font-size: 1.8rem;
+        &.super-size {
+            font-size: 3.6rem;
+        }
+    } 
+    p {
+        &.super-size {
+            font-size: 3.2rem;
+        }
+    }
+    .page-tab {
+        height: 100vh;
+        display: flex;
+        position: fixed;
+        inset: 0 0 0 0;
+        align-items: flex-start;
+        transition: $transition-std;
+        transform: translateX(calc(-100% + 42px));
+        pointer-events: none;
+        filter: drop-shadow(0px 0px 10px #203e76);
+        width: calc(100dvw - 70px);
+        .page-edge {
+            border: 2px solid $blue;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-left: 2px solid transparent;
+            padding: 10px;
+            position: relative;
+            margin: 5px 0;
+            z-index: 1;
+            background: rgba( 102, 67, 204, 0.25 );
+            backdrop-filter: blur( 4px );
+            -webkit-backdrop-filter: blur( 4px );
+            pointer-events: all;
+            min-height: 200px;
+            span {
+                writing-mode: vertical-lr;
+                transform: translateY(5px);
+            }
+        }
+        .page-content {
+            position: relative;
+            background-color: #000;
+            z-index: 0;
+            flex-grow: 1;
+            height: 100%;
+            
+            // box-shadow: 0 0 10px 5px $blue;
+            background: rgba( 102, 67, 204, 0.25 );
+            backdrop-filter: blur( 4px );
+            -webkit-backdrop-filter: blur( 4px );
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+            padding: 30px  30px 30px 30px;
+            border-left: none;
+        }
+        &:before {
+            content: '';
+            width: 70px;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: -70px;
+            background: rgba( 102, 67, 204, 0.25 );
+            backdrop-filter: blur( 4px );
+        }
+        &.open {
+            transform: translateX(55px);
+            pointer-events: all;
+            &:before {
+                pointer-events: none;
+            }
+        }
+        &:first-of-type {
+            .page-edge {
+                margin-top: 0;
+            }
+        }
+        &:last-of-type {
+            .page-edge {
+                margin-bottom: 0;
+            }
+        }
+    }
+    #modern-menu {
+        .page-edge {
+            min-height: 0;
+        }
+        svg {
+            height: 25px;
+            width: 25px;
+            path {
+                stroke: #fff;
+            }
+        }
+    }
+}

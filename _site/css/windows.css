@@ -1,0 +1,250 @@
+@font-face {
+  font-family: W95;
+  src: url("/fonts/w95fa.woff2") format("woff2");
+  font-display: swap;
+}
+.windows {
+  font-family: W95, "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #018281;
+  line-height: normal;
+}
+.windows #task-bar {
+  flex: 0 0 100%;
+  padding: 5px 10px 5px 5px;
+  background-color: #c0c0c0;
+  position: relative;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid #fff;
+}
+.windows #task-bar #start-button {
+  display: flex;
+  padding: 3px 5px;
+  gap: 5px;
+  align-items: center;
+  background-color: #c0c0c0;
+  position: relative;
+  z-index: 1;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  line-height: normal;
+  outline: 1px solid #000000;
+  font-weight: bold;
+}
+.windows #task-bar #start-menu {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  padding: 2px;
+  background-color: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  min-height: 300px;
+  min-width: 200px;
+}
+.windows #task-bar #start-menu .sidebar {
+  background-color: #808080;
+  padding: 2px;
+  writing-mode: tb-rl;
+  transform: rotate(-180deg);
+}
+.windows #task-bar #start-menu .sidebar span {
+  color: #fff;
+}
+.windows #task-bar #start-menu .sidebar span.large {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.windows #task-bar #start-menu .sidebar span.small {
+  font-size: 3rem;
+  font-weight: light;
+}
+.windows #task-bar #start-menu .main-menu {
+  width: 100%;
+}
+.windows #task-bar #start-menu .main-menu .menu-list > li {
+  position: relative;
+}
+.windows #task-bar #start-menu .main-menu .menu-list > li > button {
+  width: 100%;
+  background-color: #c0c0c0;
+  padding: 2px 0 2px 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: default;
+}
+.windows #task-bar #start-menu .main-menu .menu-list > li > button span {
+  color: #000;
+}
+.windows #task-bar #start-menu .main-menu .menu-list > li > button span:first-letter {
+  text-decoration: underline;
+}
+.windows #task-bar #start-menu .main-menu .menu-list > li > button:hover {
+  background-color: #000080;
+}
+.windows #task-bar #start-menu .main-menu .menu-list > li > button:hover span {
+  color: #fff;
+}
+.windows #task-bar #start-menu .main-menu .menu-list > li > button:hover svg path {
+  fill: #fff;
+}
+.windows #task-bar #start-menu .main-menu .menu-list > li.has-menu .sub-menu {
+  display: none;
+  background-color: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  position: absolute;
+  left: 100%;
+  top: -2px;
+}
+.windows #task-bar #start-menu .main-menu .menu-list > li.has-menu .sub-menu > li button {
+  width: 100%;
+  background-color: #c0c0c0;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 5px;
+  cursor: default;
+  font-size: 1.4rem;
+}
+.windows #task-bar #start-menu .main-menu .menu-list > li.has-menu .sub-menu > li button span {
+  color: #000;
+}
+.windows #task-bar #start-menu .main-menu .menu-list > li.has-menu .sub-menu > li button span:first-letter {
+  text-decoration: underline;
+}
+.windows #task-bar #start-menu .main-menu .menu-list > li.has-menu .sub-menu > li button:hover {
+  background-color: #000080;
+}
+.windows #task-bar #start-menu .main-menu .menu-list > li.has-menu .sub-menu > li button:hover span {
+  color: #fff;
+}
+.windows #task-bar #start-menu .main-menu .menu-list > li.has-menu:has(button:hover) > button {
+  background-color: #000080;
+}
+.windows #task-bar #start-menu .main-menu .menu-list > li.has-menu:has(button:hover) > button span {
+  color: #fff;
+}
+.windows #task-bar #start-menu .main-menu .menu-list > li.has-menu:has(button:hover) > button svg path {
+  fill: #fff;
+}
+.windows #task-bar #start-menu .main-menu .menu-list > li.has-menu:hover .sub-menu {
+  display: block;
+}
+.windows #task-bar #start-menu .main-menu svg {
+  margin-left: auto;
+  height: 20px;
+}
+.windows #task-bar #start-menu ul {
+  list-style: none;
+}
+.windows #task-bar #clock {
+  border-color: #808080 #ffffff #ffffff #808080;
+  border-style: inset;
+  padding: 3px 5px;
+}
+.windows #task-bar.start-open #start-button {
+  border-style: inset;
+  border-color: #808080 #ffffff #ffffff #808080;
+}
+.windows #task-bar.start-open #start-menu {
+  display: flex;
+}
+.windows .desktop {
+  flex-grow: 1;
+  display: grid;
+  grid-auto-columns: 70px;
+  grid-auto-rows: 70px;
+  gap: 20px;
+  padding: 15px;
+}
+.windows .desktop-icon {
+  padding: 5px 0;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  gap: 10px;
+}
+.windows .desktop-icon img, .windows .desktop-icon p {
+  border: 1px solid transparent;
+}
+.windows .desktop-icon p {
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+}
+.windows .desktop-icon.active img, .windows .desktop-icon.active p {
+  border: 1px dotted;
+}
+.windows .desktop-icon.active p {
+  background-color: #000080;
+}
+.windows .win-icon {
+  height: 2rem;
+}
+.windows .start-icon {
+  height: 3rem;
+}
+.windows .desktop-icon-img {
+  height: 3.5rem;
+}
+.windows .window {
+  border: 3px solid;
+  border-color: #ffffff #c0c0c0 #c0c0c0 #ffffff;
+  background-color: #c0c0c0;
+  width: 50vw;
+  height: 50vh;
+  color: #fff;
+  font-weight: bold;
+  position: fixed;
+  flex-direction: column;
+  display: none;
+}
+.windows .window .title-bar {
+  padding: 3px;
+  background-color: #000080;
+  border-bottom: 2px solid #c0c0c0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+.windows .window .title-bar .window-close {
+  background-color: #c0c0c0;
+  padding: 3px;
+  width: 13px;
+  height: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+}
+.windows .window .title-bar .window-close svg {
+  height: 13px;
+}
+.windows .window .window-content {
+  flex-grow: 1;
+  background-color: #fff;
+  border-style: inset;
+  border: 3px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  color: #000;
+  padding: 5px;
+}
+.windows .window.open {
+  display: flex;
+}
+
+/*# sourceMappingURL=windows.css.map */

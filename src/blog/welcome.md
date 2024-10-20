@@ -1,5 +1,5 @@
 ---
-layout: document.njk
+layout: windows.njk
 title: Welcome to my blog
 tags: blog
 

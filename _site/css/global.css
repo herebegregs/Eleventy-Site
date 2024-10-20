@@ -1,0 +1,28 @@
+@font-face {
+  font-family: W95;
+  src: url("/fonts/w95fa.woff2") format("woff2");
+  font-display: swap;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+body * {
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+}
+body a {
+  text-decoration: none;
+}
+body button {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+/*# sourceMappingURL=global.css.map */
