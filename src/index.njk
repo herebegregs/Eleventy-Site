@@ -14,17 +14,11 @@ title: Greg Morris
         <p>readme.txt</p>
     </button>
 </div>
-{% for page in navigation.pages %}
+{% asyncEach page in navigation.pages %}
     <div id="{{page.var}}-window" class="window">
         {% include "./content/windows-"+page.var+".njk" %}
     </div>
-{% endfor %}
-{# <div id="about-window" class="window">
-    {% include "./content/windows-about-me.njk" %}
-</div>
-<div id="links-window" class="window">
-    {% include "./content/windows-links.njk" %}
-</div> #}
+{% endeach %}
 <div id="readme-window" class="window">
     {% include "./content/windows-readme.njk" %}
 </div>
@@ -52,18 +46,6 @@ title: Greg Morris
                         {% endif %}
                     </li>
                 {% endfor %}
-                {# <li>
-                    <button href="#">
-                    <img class="start-icon" src="/images/blogs.png"/>
-                    <span>Blogs</span>
-                    {% svgIcon "_site/images/icons/angle-right.svg" %}
-                    </button>
-                    <ul class="sub-menu">
-                        {% for post in collections.blog %}
-                            <li><button href="#"><img class="win-icon" src="/images/95Logo.png"/><span>{{ post.data.title }}<span></button></li>
-                        {% endfor %}
-                    </ul>
-                </li> #}
             </ul>
         </div>
     </nav>
