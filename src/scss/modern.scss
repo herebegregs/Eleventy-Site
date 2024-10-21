@@ -5,41 +5,6 @@
     background: rgb(0,0,0);
     background: radial-gradient(circle at left top, rgba(#040615,1) 0%, rgba(#040615,1) 75%, rgba($blue,1) 100%);
     color: #fff;
-    h1 {
-        font-size: 3.4rem;
-        &.super-size {
-            font-size: 6.8rem;
-        }
-    }
-    h2 {
-        font-size: 3rem;
-        &.super-size {
-            font-size: 6rem;
-        }
-    }
-    h3{
-        font-size: 2.6rem;
-        &.super-size {
-            font-size: 5.2rem;
-        }
-    } 
-    h4{
-        font-size: 2.2rem;
-        &.super-size {
-            font-size: 4.4rem;
-        }
-    } 
-    h5{
-        font-size: 1.8rem;
-        &.super-size {
-            font-size: 3.6rem;
-        }
-    } 
-    p {
-        &.super-size {
-            font-size: 3.2rem;
-        }
-    }
     .page-tab {
         height: 100vh;
         display: flex;

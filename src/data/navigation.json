@@ -3,19 +3,102 @@
         {
             "title": "About Me",
             "url": "/about-me",
-            "var": "about-me"
+            "var": "about",
+            "iconWindows": "images/greg.png",
+            "description": {
+                "title": "Hi, I'm Greg",
+                "details": ""
+            }
+            
         },
         {
-            "title": "Portfolio",
-            "url": "/portfolio",
-            "var": "portfolio"
+            "title": "Links",
+            "url": "/links",
+            "var": "links",
+            "iconWindows": "images/portfolio.png",
+            "description": {
+                "title": "Some of my  most recent work",
+                "details": ""
+            }
         }
     ],
     "links": [
         {
+            "title": "Carma Impact Hub",
+            "url": "https://impact.carma.earth",
+            "var": "carma",
+            "iconWindows": "images/Carma.png",
+            "description": {
+                "title": "Carma Impact Hub",
+                "details": [
+                    {
+                        "line":"Email: demo@carma.earth"
+                    },
+                    {
+                        "line": "Password: demo-do-good"
+                    },
+                    {
+                        "line": "My current work, built in Next.js with a Keystone.js backend"
+                    }
+                ]
+            }
+        },
+        {
+            "title": "Affinity Workforce",
+            "url": "https://www.affinityworkforce.com",
+            "var": "affinity",
+            "iconWindows": "images/affinity.jpg",
+            "description": {
+                "title": "Affinity Workforce homepage",
+                "details": [
+                    {
+                        "line":"One of my more interesting projects from Electric Circus"
+                    },
+                    {
+                        "line": "A customer needed a full Wordpress site but on a very limited budget, working with our designers we came up with 6 highly configurable components that I then built. The was  pleased receieve a very flexible website that they have built up using just these 6 components"
+                    }
+                ]
+                
+            }
+        },
+        {
             "title": "Github",
             "url": "https://www.github.com",
-            "var": "github"
+            "var": "github",
+            "iconWindows": "images/github.png",
+            "description": {
+                "title": "My personal Github",
+                "details": [
+                ]
+            }
+        },
+        {
+            "title": "Modern Design",
+            "url": "/modern",
+            "var": "modern",
+            "iconWindows": "images/theme.png",
+            "description": {
+                "title": "Modern site theme",
+                "details": [
+                    {
+                        "line": "Switch over to a more modern-looking version of the site"
+                    }
+                ]
+            }
+        },
+        {
+            "title": "Vaporwave",
+            "url": "/vapor",
+            "var": "vapor",
+            "iconWindows": "images/theme.png",
+            "description": {
+                "title": "Vaporwave site theme",
+                "details": [
+                    {
+                        "line": "Go back to something a little more nostalgic..."
+                    }
+                ]
+            }
         }
     ]
 }

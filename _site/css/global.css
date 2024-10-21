@@ -12,8 +12,45 @@ body {
 }
 body * {
   font-size: 1.6rem;
+  line-height: 1.1;
   margin: 0;
   padding: 0;
+}
+body h1 {
+  font-size: 3.4rem;
+}
+body h1.super-size {
+  font-size: 6.8rem;
+}
+body h2 {
+  font-size: 3rem;
+}
+body h2.super-size {
+  font-size: 6rem;
+}
+body h3 {
+  font-size: 2.6rem;
+}
+body h3.super-size {
+  font-size: 5.2rem;
+}
+body h4 {
+  font-size: 2.2rem;
+}
+body h4.super-size {
+  font-size: 4.4rem;
+}
+body h5 {
+  font-size: 1.8rem;
+}
+body h5.super-size {
+  font-size: 3.6rem;
+}
+body p, body a {
+  font-weight: 500;
+}
+body p.super-size, body a.super-size {
+  font-size: 3.2rem;
 }
 body a {
   text-decoration: none;

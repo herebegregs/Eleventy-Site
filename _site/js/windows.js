@@ -117,4 +117,41 @@ document.addEventListener('DOMContentLoaded', function(){
             activateWindow(draggableWindows[i]);
         })
     }
+
+    function deactivateDetails(element) {
+        for(let i = 0; i < explorerIcons.length; i++) {
+            let window = element.closest(".window-content");
+            let detailPane = window.querySelector(".details.open");
+            explorerIcons[i].classList.remove("active");
+            detailPane && detailPane.classList.remove("open");
+            window.classList.remove("details-open")
+        }
+    }
+    //explorer icons
+
+    let explorerIcons = document.querySelectorAll(".explorer-pane .explorer-icon[data-details]");
+    for(let i = 0; i < explorerIcons.length; i++) {
+        let target = explorerIcons[i].dataset.details;
+        explorerIcons[i].addEventListener("click", function(e) {
+            // activeWindows = document.querySelectorAll(".window.open");
+            if(!explorerIcons[i].classList.contains("active")){
+                e.preventDefault();
+                deactivateDetails(explorerIcons[i]);
+                explorerIcons[i].classList.toggle("active");
+                document.querySelector(".details[data-details="+target+"]").classList.add("open");
+                explorerIcons[i].closest(".window-content").classList.add("details-open");
+            } else {
+                explorerIcons[i].classList.remove("active");
+            }
+        })
+    }
+
+    let explorerPanes = document.querySelectorAll(".explorer-pane");
+    for(let i = 0; i < explorerPanes.length; i++) {
+        explorerPanes[i].addEventListener("click", function(e) {
+            if(e.target === e.currentTarget){
+                deactivateDetails(explorerPanes[i]);
+            }
+        })
+    }
 }); 

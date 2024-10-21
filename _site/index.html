@@ -11,17 +11,29 @@
 	</head>
 	<body class="windows">
 		<div class="desktop">
-    <button class="desktop-icon" data-target="about-window">
-        <img class="desktop-icon-img" src="images/about.png"/>
-        <p>About Me</p>
-    </button>
-    <button class="desktop-icon" data-target="links-window">
-        <img class="desktop-icon-img" src="images/about.png"/>
-        <p>Links</p>
+    
+        <button class="desktop-icon" data-target="about-window">
+            <img class="desktop-icon-img" src="images/greg.png"/>
+            <p>About Me</p>
+        </button>
+    
+        <button class="desktop-icon" data-target="links-window">
+            <img class="desktop-icon-img" src="images/portfolio.png"/>
+            <p>Links</p>
+        </button>
+    
+    <button class="desktop-icon" data-target="readme-window">
+        <img class="desktop-icon-img" src="images/readme.png"/>
+        <p>readme.txt</p>
     </button>
 </div>
 
-<div id="about-window" class="window">
+    <div id="about-window" class="window">
+        
+    <div id="links-window" class="window">
+        
+
+<div id="readme-window" class="window">
         <div class="title-bar">
         
 About Me
@@ -43,10 +55,11 @@ About Me
 <h1>Hi, I&#39;m Greg</h1>
 
     </div>
-</div>
-<div id="links-window" class="window">
-        <div class="title-bar">
+    </div>
+    <div class="title-bar">
         
+Links
+
         <div class="window-close">
             <?xml version="1.0" encoding="utf-8"?>
 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
@@ -61,7 +74,100 @@ About Me
     </div>
     <div class="window-content">
         
-<h1>these are some links</h1>
+    <div class="explorer-pane">
+        
+            <a class="explorer-icon" href=https://impact.carma.earth target="_blanks" data-details="carma">
+                <img class="desktop-icon-img" src="images/Carma.png"/>
+                <p>Carma Impact Hub</p>
+            </a>
+        
+            <a class="explorer-icon" href=https://www.affinityworkforce.com target="_blanks" data-details="affinity">
+                <img class="desktop-icon-img" src="images/affinity.jpg"/>
+                <p>Affinity Workforce</p>
+            </a>
+        
+            <a class="explorer-icon" href=https://www.github.com target="_blanks" data-details="github">
+                <img class="desktop-icon-img" src="images/github.png"/>
+                <p>Github</p>
+            </a>
+        
+            <a class="explorer-icon" href=/modern target="_blanks" data-details="modern">
+                <img class="desktop-icon-img" src="images/theme.png"/>
+                <p>Modern Design</p>
+            </a>
+        
+            <a class="explorer-icon" href=/vapor target="_blanks" data-details="vapor">
+                <img class="desktop-icon-img" src="images/theme.png"/>
+                <p>Vaporwave</p>
+            </a>
+        
+    </div>
+    <div class="details-pane">
+        
+            <div class="details" data-details="carma">
+                <h4>Carma Impact Hub</h4>
+                
+                    <p>Email: demo@carma.earth</p>
+                
+                    <p>Password: demo-do-good</p>
+                
+                    <p>My current work, built in Next.js with a Keystone.js backend</p>
+                
+            </div>
+        
+            <div class="details" data-details="affinity">
+                <h4>Affinity Workforce homepage</h4>
+                
+                    <p>One of my more interesting projects from Electric Circus</p>
+                
+                    <p>A customer needed a full Wordpress site but on a very limited budget, working with our designers we came up with 6 highly configurable components that I then built. The was  pleased receieve a very flexible website that they have built up using just these 6 components</p>
+                
+            </div>
+        
+            <div class="details" data-details="github">
+                <h4>My personal Github</h4>
+                
+            </div>
+        
+            <div class="details" data-details="modern">
+                <h4>Modern site theme</h4>
+                
+                    <p>Switch over to a more modern-looking version of the site</p>
+                
+            </div>
+        
+            <div class="details" data-details="vapor">
+                <h4>Vaporwave site theme</h4>
+                
+                    <p>Go back to something a little more nostalgic...</p>
+                
+            </div>
+        
+    </div>
+
+    </div>
+    </div>
+    <div class="title-bar">
+        
+readme.txt
+
+        <div class="window-close">
+            <?xml version="1.0" encoding="utf-8"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" fill="none" width="24" height="24"/>
+<g>
+<path d="M18.36 19.78L12 13.41l-6.36 6.37-1.42-1.42L10.59 12 4.22 5.64l1.42-1.42L12 10.59l6.36-6.36 1.41 1.41L13.41 12l6.36 6.36z"/>
+</g>
+</svg>
+        </div>
+            
+    </div>
+    <div class="window-content">
+        
+<div class="text-pane">
+    <p>Welcome to my corner of the internet, please pardon the dust while I'm rebuilding the site!</p>
+</div>
 
     </div>
 </div>
@@ -73,12 +179,21 @@ About Me
         </div>
         <div class="main-menu">
             <ul class="menu-list">
-                <li><button href="#" data-target="about-window"><img class="start-icon" src="/images/about.png"/><span>About Me</span></button></li>
-                <li class="has-menu">
-                    <button href="#">
-                    <img class="start-icon" src="/images/blogs.png"/>
-                    <span>Blogs</span>
-                    <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                
+                    <li >
+                        <button href="#" data-target="about-window">
+                            <img class="start-icon" src="images/greg.png"/>
+                            <span>About Me</span>
+                            
+                        </button>
+                        
+                    </li>
+                
+                    <li  class="has-menu">
+                        <button href="#" data-target="links-window">
+                            <img class="start-icon" src="images/portfolio.png"/>
+                            <span>Links</span>
+                            <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
 	 viewBox="0 0 24 24" xml:space="preserve">
 <style type="text/css">
@@ -88,13 +203,25 @@ About Me
 <rect class="st0" width="24" height="24"/>
 <rect class="st0" width="24" height="24"/>
 </svg>
-                    </button>
-                    <ul class="sub-menu">
+                        </button>
                         
-                            <li><button href="#"><img class="win-icon" src="/images/95Logo.png"/><span>Welcome to my blog<span></button></li>
+                            <ul class="sub-menu">
+                                
+                                    <li><a href="https://impact.carma.earth"><img class="win-icon" src="images/Carma.png"/><span>Carma Impact Hub<span></a></li>
+                                
+                                    <li><a href="https://www.affinityworkforce.com"><img class="win-icon" src="images/affinity.jpg"/><span>Affinity Workforce<span></a></li>
+                                
+                                    <li><a href="https://www.github.com"><img class="win-icon" src="images/github.png"/><span>Github<span></a></li>
+                                
+                                    <li><a href="/modern"><img class="win-icon" src="images/theme.png"/><span>Modern Design<span></a></li>
+                                
+                                    <li><a href="/vapor"><img class="win-icon" src="images/theme.png"/><span>Vaporwave<span></a></li>
+                                
+                            </ul>
                         
-                    </ul>
-                </li>
+                    </li>
+                
+                
             </ul>
         </div>
     </nav>

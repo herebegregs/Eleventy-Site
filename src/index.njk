@@ -3,21 +3,30 @@ layout: windows.njk
 title: Greg Morris
 ---
 <div class="desktop">
-    <button class="desktop-icon" data-target="about-window">
-        <img class="desktop-icon-img" src="images/about.png"/>
-        <p>About Me</p>
-    </button>
-    <button class="desktop-icon" data-target="links-window">
-        <img class="desktop-icon-img" src="images/about.png"/>
-        <p>Links</p>
+    {% for page in navigation.pages %}
+        <button class="desktop-icon" data-target="{{page.var}}-window">
+            <img class="desktop-icon-img" src="{{page.iconWindows}}"/>
+            <p>{{page.title}}</p>
+        </button>
+    {% endfor %}
+    <button class="desktop-icon" data-target="readme-window">
+        <img class="desktop-icon-img" src="images/readme.png"/>
+        <p>readme.txt</p>
     </button>
 </div>
-
-<div id="about-window" class="window">
+{% for page in navigation.pages %}
+    <div id="{{page.var}}-window" class="window">
+        {% include "./content/windows-"+page.var+".njk" %}
+    </div>
+{% endfor %}
+{# <div id="about-window" class="window">
     {% include "./content/windows-about-me.njk" %}
 </div>
 <div id="links-window" class="window">
     {% include "./content/windows-links.njk" %}
+</div> #}
+<div id="readme-window" class="window">
+    {% include "./content/windows-readme.njk" %}
 </div>
 <div id="task-bar">
     <nav id="start-menu">
@@ -27,8 +36,23 @@ title: Greg Morris
         </div>
         <div class="main-menu">
             <ul class="menu-list">
-                <li><button href="#" data-target="about-window"><img class="start-icon" src="/images/about.png"/><span>About Me</span></button></li>
-                <li class="has-menu">
+                {% for page in navigation.pages %}
+                    <li {%if page.var == "links" %} class="has-menu"{% endif %}>
+                        <button href="#" data-target="{{page.var}}-window">
+                            <img class="start-icon" src="{{page.iconWindows}}"/>
+                            <span>{{page.title}}</span>
+                            {%if page.var == "links" %}{% svgIcon "_site/images/icons/angle-right.svg" %}{% endif %}
+                        </button>
+                        {%if page.var == "links" %}
+                            <ul class="sub-menu">
+                                {% for link in navigation.links %}
+                                    <li><a href="{{link.url}}"><img class="win-icon" src="{{link.iconWindows}}"/><span>{{ link.title }}<span></a></li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+                {# <li>
                     <button href="#">
                     <img class="start-icon" src="/images/blogs.png"/>
                     <span>Blogs</span>
@@ -39,7 +63,7 @@ title: Greg Morris
                             <li><button href="#"><img class="win-icon" src="/images/95Logo.png"/><span>{{ post.data.title }}<span></button></li>
                         {% endfor %}
                     </ul>
-                </li>
+                </li> #}
             </ul>
         </div>
     </nav>

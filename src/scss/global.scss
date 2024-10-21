@@ -7,8 +7,45 @@ body {
     font-size: 1.6rem;
     * {
         font-size: 1.6rem;
+        line-height: 1.1;
         margin: 0;
         padding: 0;
+    }
+    h1 {
+        font-size: 3.4rem;
+        &.super-size {
+            font-size: 6.8rem;
+        }
+    }
+    h2 {
+        font-size: 3rem;
+        &.super-size {
+            font-size: 6rem;
+        }
+    }
+    h3{
+        font-size: 2.6rem;
+        &.super-size {
+            font-size: 5.2rem;
+        }
+    } 
+    h4{
+        font-size: 2.2rem;
+        &.super-size {
+            font-size: 4.4rem;
+        }
+    } 
+    h5{
+        font-size: 1.8rem;
+        &.super-size {
+            font-size: 3.6rem;
+        }
+    } 
+    p, a {
+        font-weight: 500;
+        &.super-size {
+            font-size: 3.2rem;
+        }
     }
     a {
         text-decoration: none;

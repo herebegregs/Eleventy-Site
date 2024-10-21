@@ -105,27 +105,26 @@
   left: 100%;
   top: -2px;
 }
-.windows #task-bar #start-menu .main-menu .menu-list > li.has-menu .sub-menu > li button {
-  width: 100%;
+.windows #task-bar #start-menu .main-menu .menu-list > li.has-menu .sub-menu > li button, .windows #task-bar #start-menu .main-menu .menu-list > li.has-menu .sub-menu > li a {
   background-color: #c0c0c0;
   white-space: nowrap;
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 3px 5px;
+  gap: 10px;
+  padding: 5px 7px;
   cursor: default;
   font-size: 1.4rem;
 }
-.windows #task-bar #start-menu .main-menu .menu-list > li.has-menu .sub-menu > li button span {
+.windows #task-bar #start-menu .main-menu .menu-list > li.has-menu .sub-menu > li button span, .windows #task-bar #start-menu .main-menu .menu-list > li.has-menu .sub-menu > li a span {
   color: #000;
 }
-.windows #task-bar #start-menu .main-menu .menu-list > li.has-menu .sub-menu > li button span:first-letter {
+.windows #task-bar #start-menu .main-menu .menu-list > li.has-menu .sub-menu > li button span:first-letter, .windows #task-bar #start-menu .main-menu .menu-list > li.has-menu .sub-menu > li a span:first-letter {
   text-decoration: underline;
 }
-.windows #task-bar #start-menu .main-menu .menu-list > li.has-menu .sub-menu > li button:hover {
+.windows #task-bar #start-menu .main-menu .menu-list > li.has-menu .sub-menu > li button:hover, .windows #task-bar #start-menu .main-menu .menu-list > li.has-menu .sub-menu > li a:hover {
   background-color: #000080;
 }
-.windows #task-bar #start-menu .main-menu .menu-list > li.has-menu .sub-menu > li button:hover span {
+.windows #task-bar #start-menu .main-menu .menu-list > li.has-menu .sub-menu > li button:hover span, .windows #task-bar #start-menu .main-menu .menu-list > li.has-menu .sub-menu > li a:hover span {
   color: #fff;
 }
 .windows #task-bar #start-menu .main-menu .menu-list > li.has-menu:has(button:hover) > button {
@@ -181,6 +180,7 @@
 .windows .desktop-icon p {
   color: #fff;
   text-shadow: 1px 1px 1px #000;
+  text-align: center;
 }
 .windows .desktop-icon.active img, .windows .desktop-icon.active p {
   border: 1px dotted;
@@ -239,8 +239,67 @@
   background-color: #fff;
   border-style: inset;
   border: 3px solid;
-  border-color: #808080 #ffffff #ffffff #808080;
+  border-color: #808080 #ffffff #c0c0c0 #808080;
   color: #000;
+  display: flex;
+}
+.windows .window .window-content .explorer-pane {
+  flex-basis: 100%;
+  flex-shrink: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 70px);
+  grid-auto-rows: 80px;
+  gap: 20px;
+  padding: 15px;
+  height: calc(100% - 30px);
+}
+.windows .window .window-content .explorer-pane .explorer-icon {
+  width: 70px;
+  padding: 5px 0;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  gap: 10px;
+}
+.windows .window .window-content .explorer-pane .explorer-icon img, .windows .window .window-content .explorer-pane .explorer-icon p {
+  border: 1px solid transparent;
+}
+.windows .window .window-content .explorer-pane .explorer-icon p {
+  color: #000;
+  text-align: center;
+}
+.windows .window .window-content .explorer-pane .explorer-icon.active img, .windows .window .window-content .explorer-pane .explorer-icon.active p {
+  border: 1px dotted;
+}
+.windows .window .window-content .explorer-pane .explorer-icon.active p {
+  background-color: #000080;
+  color: #fff;
+}
+.windows .window .window-content .details-pane {
+  display: none;
+  flex-basis: 30%;
+  flex-shrink: 0;
+  border-left: 3px solid #808080;
+  height: 100%;
+}
+.windows .window .window-content .details-pane .details {
+  display: none;
+  padding: 15px;
+  flex-direction: column;
+  gap: 15px;
+}
+.windows .window .window-content.details-open .explorer-pane {
+  flex-basis: 70%;
+  border-right: 3px solid #c0c0c0;
+}
+.windows .window .window-content.details-open .details-pane {
+  display: flex;
+}
+.windows .window .window-content.details-open .details-pane .details.open {
+  display: flex;
+}
+.windows .window .window-content .text-pane {
   padding: 5px;
 }
 .windows .window.open {

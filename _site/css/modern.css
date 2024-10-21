@@ -9,39 +9,6 @@
   background: radial-gradient(circle at left top, #040615 0%, #040615 75%, #203e76 100%);
   color: #fff;
 }
-.modern h1 {
-  font-size: 3.4rem;
-}
-.modern h1.super-size {
-  font-size: 6.8rem;
-}
-.modern h2 {
-  font-size: 3rem;
-}
-.modern h2.super-size {
-  font-size: 6rem;
-}
-.modern h3 {
-  font-size: 2.6rem;
-}
-.modern h3.super-size {
-  font-size: 5.2rem;
-}
-.modern h4 {
-  font-size: 2.2rem;
-}
-.modern h4.super-size {
-  font-size: 4.4rem;
-}
-.modern h5 {
-  font-size: 1.8rem;
-}
-.modern h5.super-size {
-  font-size: 3.6rem;
-}
-.modern p.super-size {
-  font-size: 3.2rem;
-}
 .modern .page-tab {
   height: 100vh;
   display: flex;
