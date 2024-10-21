@@ -4,12 +4,38 @@ title: Greg Morris
 ---
 <div class="page-tab" id="modern-menu">
     <div class="page-content">
-        <h1>This is a menu</h1>
-        <ul>
-            <li><a href="/">Back to '95!</a></li>
-        </ul>
+        <div class="page-wrapper">
+            <h1>This is a menu</h1>
+            <ul>
+                {% for link in navigation.links %}
+                    {% if link.var != 'modern' %}
+                        <li data-details="{{link.var}}">
+                            <a href="{{link.url}}">{{link.title}}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="flyout">
+            {% for link in navigation.links %}
+                <div class="flyout-details"  data-details="{{link.var}}">
+                    <h3>{{ link.description.title}}</h3>
+                    {% for line in link.description.details %}
+                        <p>{{ line.line}}</p>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
     </div>
     <div class="page-edge">
         {% svgIcon "_site/images/icons/menu.svg" %}
     </div>
+</div>
+{% for nav in navigation.pages %}
+    {% include "./content/modern-"+nav.var+".njk" %}
+{% endfor %}
+<div class="backdrop">
+    <h1 class="super-size">
+        A more modern approach...
+    </h1>
 </div>

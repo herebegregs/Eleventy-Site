@@ -1,5 +1,17 @@
 {
     "title": "Portfolio",
     "heading": "Some stuff I made",
-    "subHeading": "(I make websites)"
+    "subheading": "(I make websites)",
+    "projects": [
+        {
+            "title": "Carma Impact Hub",
+            "description": "My current work, built in Next.js with a Keystone.js backend",
+            "examples": [
+                {
+                    "image": "",
+                    "caption": ""
+                }
+            ]
+        }
+    ]
 }

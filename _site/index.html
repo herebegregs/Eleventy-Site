@@ -17,11 +17,15 @@
             <p>About Me</p>
         </button>
     
-        <button class="desktop-icon" data-target="links-window">
-            <img class="desktop-icon-img" src="images/portfolio.png"/>
-            <p>Links</p>
+        <button class="desktop-icon" data-target="portfolio-window">
+            <img class="desktop-icon-img" src="images/blogs.png"/>
+            <p>Portfolio</p>
         </button>
     
+    <button class="desktop-icon" data-target="links-window">
+        <img class="desktop-icon-img" src="images/links.png"/>
+        <p>Links</p>
+    </button>
     <button class="desktop-icon" data-target="readme-window">
         <img class="desktop-icon-img" src="images/readme.png"/>
         <p>readme.txt</p>
@@ -47,13 +51,43 @@ About Me
     </div>
     <div class="window-content">
         
-<h1>Hi, I&#39;m Greg</h1>
+<div class="text-pane">
+    <h1>Hi, I&#39;m Greg</h1>
+    <p>(I make websites)</p>
+</div>
 
     </div>
     </div>
 
-    <div id="links-window" class="window">
+    <div id="portfolio-window" class="window">
             <div class="title-bar">
+        
+Portfolio
+
+        <div class="window-close">
+            <?xml version="1.0" encoding="utf-8"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" fill="none" width="24" height="24"/>
+<g>
+<path d="M18.36 19.78L12 13.41l-6.36 6.37-1.42-1.42L10.59 12 4.22 5.64l1.42-1.42L12 10.59l6.36-6.36 1.41 1.41L13.41 12l6.36 6.36z"/>
+</g>
+</svg>
+        </div>
+            
+    </div>
+    <div class="window-content">
+        
+<div class="text-pane">
+    <h1>Some stuff I made</h1>
+    <p>(I make websites)</p>
+</div>
+
+    </div>
+    </div>
+
+<div id="links-window" class="window">
+        <div class="title-bar">
         
 Links
 
@@ -143,8 +177,7 @@ Links
     </div>
 
     </div>
-    </div>
-
+</div>
 <div id="readme-window" class="window">
         <div class="title-bar">
         
@@ -179,20 +212,25 @@ readme.txt
         <div class="main-menu">
             <ul class="menu-list">
                 
-                    <li >
+                    <li>
                         <button href="#" data-target="about-window">
                             <img class="start-icon" src="images/greg.png"/>
                             <span>About Me</span>
-                            
                         </button>
-                        
                     </li>
                 
-                    <li  class="has-menu">
-                        <button href="#" data-target="links-window">
-                            <img class="start-icon" src="images/portfolio.png"/>
-                            <span>Links</span>
-                            <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                    <li>
+                        <button href="#" data-target="portfolio-window">
+                            <img class="start-icon" src="images/blogs.png"/>
+                            <span>Portfolio</span>
+                        </button>
+                    </li>
+                
+                <li class="has-menu">
+                    <button href="#" data-target="links-window">
+                        <img class="start-icon" src="images/links.png"/>
+                        <span>Links</span>
+                        <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
 	 viewBox="0 0 24 24" xml:space="preserve">
 <style type="text/css">
@@ -202,24 +240,21 @@ readme.txt
 <rect class="st0" width="24" height="24"/>
 <rect class="st0" width="24" height="24"/>
 </svg>
-                        </button>
+                    </button>
+                    <ul class="sub-menu">
                         
-                            <ul class="sub-menu">
-                                
-                                    <li><a href="https://impact.carma.earth"><img class="win-icon" src="images/Carma.png"/><span>Carma Impact Hub<span></a></li>
-                                
-                                    <li><a href="https://www.affinityworkforce.com"><img class="win-icon" src="images/affinity.jpg"/><span>Affinity Workforce<span></a></li>
-                                
-                                    <li><a href="https://www.github.com"><img class="win-icon" src="images/github.png"/><span>Github<span></a></li>
-                                
-                                    <li><a href="/modern"><img class="win-icon" src="images/theme.png"/><span>Modern Design<span></a></li>
-                                
-                                    <li><a href="/vapor"><img class="win-icon" src="images/theme.png"/><span>Vaporwave<span></a></li>
-                                
-                            </ul>
+                            <li><a href="https://impact.carma.earth"><img class="win-icon" src="images/Carma.png"/><span>Carma Impact Hub<span></a></li>
                         
-                    </li>
-                
+                            <li><a href="https://www.affinityworkforce.com"><img class="win-icon" src="images/affinity.jpg"/><span>Affinity Workforce<span></a></li>
+                        
+                            <li><a href="https://www.github.com"><img class="win-icon" src="images/github.png"/><span>Github<span></a></li>
+                        
+                            <li><a href="/modern"><img class="win-icon" src="images/theme.png"/><span>Modern Design<span></a></li>
+                        
+                            <li><a href="/vapor"><img class="win-icon" src="images/theme.png"/><span>Vaporwave<span></a></li>
+                        
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>

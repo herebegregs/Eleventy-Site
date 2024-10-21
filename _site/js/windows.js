@@ -1,9 +1,11 @@
 document.addEventListener('DOMContentLoaded', function(){
-    console.log("loaded!");
+    function formatTime(number) {
+        return number < 10 ? '0' + number : number;
+    }
 
     let now = new Date();
-    let hours = now.getHours();
-    let minutes = now.getMinutes();
+    let hours = formatTime(now.getHours());
+    let minutes = formatTime(now.getMinutes());
 
     document.getElementById("clock").textContent = `${hours}:${minutes}`
 

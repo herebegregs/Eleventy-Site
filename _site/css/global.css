@@ -1,7 +1,31 @@
 @font-face {
-  font-family: W95;
-  src: url("/fonts/w95fa.woff2") format("woff2");
+  font-family: "W95";
+  src: url("/fonts/w95fa.woff2") format("woff2"), url("/fonts/w95fa.woff") format("woff"), url("/fonts/w95fa.otf") format("otf");
   font-display: swap;
+}
+@font-face {
+  font-family: "SpaceMono";
+  src: url("/fonts/SpaceMono-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "SpaceMono";
+  src: url("/fonts/SpaceMono-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "SpaceMono";
+  src: url("/fonts/SpaceMono-BoldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "SpaceMono";
+  src: url("/fonts/SpaceMono-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
 }
 html {
   font-size: 62.5%;
@@ -60,6 +84,9 @@ body button {
   appearance: none;
   outline: none;
   border: none;
+}
+body ul {
+  list-style-type: none;
 }
 
 /*# sourceMappingURL=global.css.map */

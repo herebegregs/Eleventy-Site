@@ -12,10 +12,10 @@
             
         },
         {
-            "title": "Links",
-            "url": "/links",
-            "var": "links",
-            "iconWindows": "images/portfolio.png",
+            "title": "Portfolio",
+            "url": "/portfolio",
+            "var": "portfolio",
+            "iconWindows": "images/blogs.png",
             "description": {
                 "title": "Some of my  most recent work",
                 "details": ""

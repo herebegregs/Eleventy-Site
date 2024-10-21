@@ -9,6 +9,10 @@ title: Greg Morris
             <p>{{page.title}}</p>
         </button>
     {% endfor %}
+    <button class="desktop-icon" data-target="links-window">
+        <img class="desktop-icon-img" src="images/links.png"/>
+        <p>Links</p>
+    </button>
     <button class="desktop-icon" data-target="readme-window">
         <img class="desktop-icon-img" src="images/readme.png"/>
         <p>readme.txt</p>
@@ -19,6 +23,9 @@ title: Greg Morris
         {% include "./content/windows-"+page.var+".njk" %}
     </div>
 {% endeach %}
+<div id="links-window" class="window">
+    {% include "./content/windows-links.njk" %}
+</div>
 <div id="readme-window" class="window">
     {% include "./content/windows-readme.njk" %}
 </div>
@@ -31,21 +38,25 @@ title: Greg Morris
         <div class="main-menu">
             <ul class="menu-list">
                 {% for page in navigation.pages %}
-                    <li {%if page.var == "links" %} class="has-menu"{% endif %}>
+                    <li>
                         <button href="#" data-target="{{page.var}}-window">
                             <img class="start-icon" src="{{page.iconWindows}}"/>
                             <span>{{page.title}}</span>
-                            {%if page.var == "links" %}{% svgIcon "_site/images/icons/angle-right.svg" %}{% endif %}
                         </button>
-                        {%if page.var == "links" %}
-                            <ul class="sub-menu">
-                                {% for link in navigation.links %}
-                                    <li><a href="{{link.url}}"><img class="win-icon" src="{{link.iconWindows}}"/><span>{{ link.title }}<span></a></li>
-                                {% endfor %}
-                            </ul>
-                        {% endif %}
                     </li>
                 {% endfor %}
+                <li class="has-menu">
+                    <button href="#" data-target="links-window">
+                        <img class="start-icon" src="images/links.png"/>
+                        <span>Links</span>
+                        {% svgIcon "_site/images/icons/angle-right.svg" %}
+                    </button>
+                    <ul class="sub-menu">
+                        {% for link in navigation.links %}
+                            <li><a href="{{link.url}}"><img class="win-icon" src="{{link.iconWindows}}"/><span>{{ link.title }}<span></a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>

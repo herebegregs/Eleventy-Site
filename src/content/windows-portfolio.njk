@@ -1,0 +1,13 @@
+{% extends "partials/window.njk" %}
+{% block windowTitle %}
+{{ portfolio.title }}
+{% endblock %}
+{% block windowIcon %}
+<img class="win-icon" src="images/95Logo.png"/>
+{% endblock %}
+{% block windowContent %}
+<div class="text-pane">
+    <h1>{{ portfolio.heading }}</h1>
+    <p>{{ portfolio.subheading }}</p>
+</div>
+{% endblock %}

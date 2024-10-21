@@ -1,10 +1,17 @@
 @use './variables.scss' as *;
 
 .modern {
+	font-family: 'SpaceMono', 'Lucida Sans Unicode', 'Lucida Sans', Arial, sans-serif;
     min-height: 100vh;
     background: rgb(0,0,0);
     background: radial-gradient(circle at left top, rgba(#040615,1) 0%, rgba(#040615,1) 75%, rgba($blue,1) 100%);
     color: #fff;
+    a {
+        color: #fff;
+        &:visited {
+            color: #fff;
+        }
+    }
     .page-tab {
         height: 100vh;
         display: flex;
@@ -12,10 +19,12 @@
         inset: 0 0 0 0;
         align-items: flex-start;
         transition: $transition-std;
+        transition-duration: 0.75s;
         transform: translateX(calc(-100% + 42px));
         pointer-events: none;
         filter: drop-shadow(0px 0px 10px #203e76);
         width: calc(100dvw - 70px);
+        z-index: 2;
         .page-edge {
             border: 2px solid $blue;
             border-top-right-radius: 10px;
@@ -41,14 +50,21 @@
             z-index: 0;
             flex-grow: 1;
             height: 100%;
-            
-            // box-shadow: 0 0 10px 5px $blue;
             background: rgba( 102, 67, 204, 0.25 );
-            backdrop-filter: blur( 4px );
-            -webkit-backdrop-filter: blur( 4px );
             border: 1px solid rgba( 255, 255, 255, 0.18 );
             padding: 30px  30px 30px 30px;
             border-left: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .page-wrapper {
+                padding: 40px;
+                border-radius: 40px;
+                background: #1e293b;
+                border: 1px solid rgba( 255, 255, 255, 0.18 );
+                position: relative;
+            }
         }
         &:before {
             content: '';
@@ -64,6 +80,7 @@
         &.open {
             transform: translateX(55px);
             pointer-events: all;
+            z-index: 1;
             &:before {
                 pointer-events: none;
             }
@@ -83,12 +100,80 @@
         .page-edge {
             min-height: 0;
         }
+        .page-content {
+            .page-wrapper {
+                ul {
+                    margin-top: 40px;
+                    li {
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+            .flyout {
+                position: absolute;
+                opacity: 0;
+                z-index: -1;
+                width: 20vw;
+                max-width: 400px;
+                min-width: 200px;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                transition: $transition-std;
+                border-top-left-radius: 40px;
+                border-bottom-left-radius: 40px;
+                background: rgba( #000, 0.5 );
+                border: 1px solid rgba( 255, 255, 255, 0.18 );
+                border-right: none;
+                padding: 40px;
+                pointer-events: none;
+                .flyout-details {
+                    position: absolute;
+                    transition: $transition-std;
+                    // top: 40px;
+                    // left: 40px;
+                    // right: 40px;
+                    // bottom: 0;
+                    opacity: 0;
+                    pointer-events: none;
+                    flex-direction: column;
+                    gap: 20px;
+                    display: none;
+                    &.active {
+                        display: flex;
+                        position: relative;
+                        opacity: 1;
+                        pointer-events: all;
+                    }
+                }
+                &.open {
+                    opacity: 1;
+                }
+            }
+        }
         svg {
             height: 25px;
             width: 25px;
             path {
                 stroke: #fff;
             }
+        }
+    }
+    .backdrop {
+        height: 100dvh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: $transition-std;
+        h1 {
+            padding: 40px;
+            border-radius: 40px;
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+        }
+    }
+    &:has(.page-tab.open) {
+        .backdrop {
+            filter: blur(40px);
         }
     }
 }
