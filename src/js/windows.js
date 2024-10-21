@@ -156,4 +156,9 @@ document.addEventListener('DOMContentLoaded', function(){
             }
         })
     }
+    document.querySelectorAll('.splide').forEach(el => {
+        new Splide( '.splide' ).mount();
+      })
+
+
 }); 

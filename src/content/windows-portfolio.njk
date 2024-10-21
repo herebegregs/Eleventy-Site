@@ -1,13 +1,39 @@
 {% extends "partials/window.njk" %}
 {% block windowTitle %}
-{{ portfolio.title }}
+{{ portfolio.title }} - {{ portfolio.subheading }}
 {% endblock %}
 {% block windowIcon %}
 <img class="win-icon" src="images/95Logo.png"/>
 {% endblock %}
 {% block windowContent %}
-<div class="text-pane">
-    <h1>{{ portfolio.heading }}</h1>
-    <p>{{ portfolio.subheading }}</p>
+<div class="file-pane">
+    <div class="file-list">
+        <ul>
+            <li>{{ portfolio.heading }}</li>
+            <ul>
+            {%for project in portfolio.projects %}
+                <li>{{ project.title }}</li>
+            {%endfor %}
+            </ul>
+        </ul>
+    </div>
+    <div class="file-display">
+        {%for project in portfolio.projects %}
+        <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+  <div class="splide__track">
+            <ul class="display-details splide__list">
+                {%for example in  project.examples%}
+                    <li class="splide__slide">
+                        <figure>
+                            <img src="{{ example.image }}" alt="{{ project.title }}">
+                            <p>{{ example.caption }}</p>
+                        </figure>
+                    </li>
+                {% endfor %}
+            </ul>
+    </div>
+    </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

@@ -8,8 +8,44 @@
             "description": "My current work, built in Next.js with a Keystone.js backend",
             "examples": [
                 {
-                    "image": "",
-                    "caption": ""
+                    "image": "images/examples/carma/carma1.png",
+                    "caption": "Login/signup screen with dynamic slider populated from the Keystone backend. Forgotten password journey utilises magic links to log users in. I have pushed to switch to strictly magic links for login but our CEO prefers email/password entry."
+                },
+                {
+                    "image": "images/examples/carma/carma8.png",
+                    "caption": "The initial view of the Hub, with a dynamic Impact Map displaying locations a users trees have been planted at varying levels of detail as users zoom in - first by country, then region and lastly individual Planting Sites."
+                },
+                {
+                    "image": "images/examples/carma/carma3.png",
+                    "caption": "Clicking on a map marker will display a tooltip showcasing all Planting Sites in that country/region or singular sites. A link in the Planting Sites tooltip will navigate to a more detailed breakdopwn page for that Planting Site."
+                },
+                {
+                    "image": "images/examples/carma/carma2.png",
+                    "caption": "The Planting Site detail showcases a brief description of the site along with a viewable gallery, personalised statistics for that Site, a map of the local area, which of the UN's Sustainable Development Goals are covered by that Site along with a details of each species planted on behalf of the user."
+                },
+                {
+                    "image": "images/examples/carma/carma7.png",
+                    "caption": "The Impact Map can be extensively customised: a user can choose from a wide variety of personal statistics to display above and below the map or remove some if preferred, the map colors can also be changed as well as the font or the map can be disable altogether to display only statistics."
+                },
+                {
+                    "image": "images/examples/carma/carma9.png",
+                    "caption": "Once a user has customised it to their liking they are able to embed the map in a website with a one-click operation to copy embed-code to their clipboard, the map will then display the saved configuration on a site of the users choosing."
+                },
+                {
+                    "image": "images/examples/carma/carma5.png",
+                    "caption": "Users can track all purchases and subscriptions made, with breakdowns for one-off purchases, active subscriptions, gifted purchases and soon referral bonuses."
+                },
+                {
+                    "image": "images/examples/carma/carma4.png",
+                    "caption": "Clicking on each order will display further details about the status of a users order and a breakdown of where their purchased trees have been planted with links through to the Planting Site pages."
+                },
+                {
+                    "image": "images/examples/carma/carma6.png",
+                    "caption": "I have recently developed a custom Profile Page builder that allows users to make a truly unique Profile Page - users can stack multiple customisable page sections together to create a personalised page. Each section has dynamic page anchor options, alignment, customisable text and image content as well as section specific customisations such as display statistics or Impact Map details. Each section in the editor can be collapsed and shifted up and down in the page order and has facilities for displaying editing hints for more complex sections. In the interests of security all text input is sanitised before it is saved to our Keystone backend."
+                },
+                {
+                    "image": "images/examples/carma/carma10.png",
+                    "caption": "Users can share their newly-customised, publicly-visible profile page with anyone to showcase the steps they have taken towards managing their carbon footprint."
                 }
             ]
         }
