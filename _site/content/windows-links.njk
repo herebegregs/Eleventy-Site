@@ -1,0 +1,26 @@
+{% block windowTitle %}
+Links
+{% endblock %}
+{% extends "partials/window.njk" %}
+{% block windowIcon %}
+{% endblock %}
+{% block windowContent %}
+    <div class="explorer-pane">
+        {% for link in navigation.links %}
+            <a class="explorer-icon" href={{link.url}} target="_blanks" data-details="{{link.var}}">
+                <img class="desktop-icon-img" src="{{link.iconWindows}}"/>
+                <p>{{link.title}}</p>
+            </a>
+        {% endfor %}
+    </div>
+    <div class="details-pane">
+        {% for link in navigation.links %}
+            <div class="details" data-details="{{link.var}}">
+                <h4>{{ link.description.title }}</h4>
+                {% for line in link.description.details %}
+                    <p>{{ line.line }}</p>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

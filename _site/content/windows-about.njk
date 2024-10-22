@@ -1,0 +1,12 @@
+{% extends "partials/window.njk" %}
+{% block windowTitle %}
+{{ about.title }}
+{% endblock %}
+{% block windowIcon %}
+{% endblock %}
+{% block windowContent %}
+<div class="text-pane">
+    <h1>{{ about.heading }}</h1>
+    <p>{{ about.subheading }}</p>
+</div>
+{% endblock %}

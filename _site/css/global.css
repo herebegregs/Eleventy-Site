@@ -1,0 +1,92 @@
+@font-face {
+  font-family: "W95";
+  src: url("/fonts/w95fa.woff2") format("woff2"), url("/fonts/w95fa.woff") format("woff"), url("/fonts/w95fa.otf") format("otf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "SpaceMono";
+  src: url("/fonts/SpaceMono-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "SpaceMono";
+  src: url("/fonts/SpaceMono-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "SpaceMono";
+  src: url("/fonts/SpaceMono-BoldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "SpaceMono";
+  src: url("/fonts/SpaceMono-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+body * {
+  font-size: 1.6rem;
+  line-height: 1.1;
+  margin: 0;
+  padding: 0;
+}
+body h1 {
+  font-size: 3.4rem;
+}
+body h1.super-size {
+  font-size: 6.8rem;
+}
+body h2 {
+  font-size: 3rem;
+}
+body h2.super-size {
+  font-size: 6rem;
+}
+body h3 {
+  font-size: 2.6rem;
+}
+body h3.super-size {
+  font-size: 5.2rem;
+}
+body h4 {
+  font-size: 2.2rem;
+}
+body h4.super-size {
+  font-size: 4.4rem;
+}
+body h5 {
+  font-size: 1.8rem;
+}
+body h5.super-size {
+  font-size: 3.6rem;
+}
+body p, body a {
+  font-weight: 500;
+}
+body p.super-size, body a.super-size {
+  font-size: 3.2rem;
+}
+body a {
+  text-decoration: none;
+}
+body button {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+body ul {
+  list-style-type: none;
+}
+
+/*# sourceMappingURL=global.css.map */

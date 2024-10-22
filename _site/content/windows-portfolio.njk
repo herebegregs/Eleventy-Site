@@ -1,0 +1,38 @@
+{% extends "partials/window.njk" %}
+{% block windowTitle %}
+{{ portfolio.title }} - {{ portfolio.subheading }}
+{% endblock %}
+{% block windowIcon %}
+{% endblock %}
+{% block windowContent %}
+<div class="file-pane">
+    <div class="file-list">
+        <ul>
+            <li>{{ portfolio.heading }}</li>
+            <ul>
+                {%for project in portfolio.projects %}
+                    <li data-project="{{project.var}}"><div class="collapser">{% svgIcon "_site/images/icons/plus.svg" %}{% svgIcon "_site/images/icons/minus.svg" %}</div>{{ project.title }}</li>
+                    <ul class="collapsed" data-project="{{project.var}}">
+                        {%for example in  project.examples%}
+                            <li class="file" data-target="{{project.var}}{{ loop.index }}"><img class="win-icon" src="images/image.png" alt="{{project.var}}_{{ loop.index }}.bmp">{{project.var}}_{{ loop.index }}.bmp</li>
+                        {% endfor %}
+                    </ul>
+                {%endfor %}
+            </ul>
+        </ul>
+    </div>
+    <div class="file-display">
+            <ul class="display-details">
+        {%for project in portfolio.projects %}
+                {%for example in  project.examples%}
+                    <li data-target="{{project.var}}{{ loop.index }}">
+                        <figure>
+                            <img src="{{ example.image }}" alt="{{ project.title }}">
+                        </figure>
+                    </li>
+                {% endfor %}
+        {% endfor %}
+            </ul>
+    </div>
+</div>
+{% endblock %}
