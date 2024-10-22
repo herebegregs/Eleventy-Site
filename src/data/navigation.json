@@ -27,6 +27,7 @@
             "title": "My CV",
             "url": "../docs/GregMorris.pdf",
             "var": "cv",
+            "target": "_blank",
             "iconWindows": "images/cv.png",
             "description": {
                 "title": "My CV",
@@ -41,6 +42,7 @@
             "title": "My Alternative CV",
             "url": "../docs/GregMorrisAlt.pdf",
             "var": "cvalt",
+            "target": "_blank",
             "iconWindows": "images/cv.png",
             "description": {
                 "title": "My Alternative CV",
@@ -55,6 +57,7 @@
             "title": "Carma Impact Hub",
             "url": "https://impact.carma.earth",
             "var": "carma",
+            "target": "_blank",
             "iconWindows": "images/Carma.png",
             "description": {
                 "title": "Carma Impact Hub",
@@ -75,6 +78,7 @@
             "title": "Affinity Workforce",
             "url": "https://www.affinityworkforce.com",
             "var": "affinity",
+            "target": "_blank",
             "iconWindows": "images/affinity.jpg",
             "description": {
                 "title": "Affinity Workforce homepage",
@@ -93,6 +97,7 @@
             "title": "Github",
             "url": "https://www.github.com",
             "var": "github",
+            "target": "_blank",
             "iconWindows": "images/github.png",
             "description": {
                 "title": "My personal Github",
@@ -104,6 +109,7 @@
             "title": "Modern Design",
             "url": "/modern",
             "var": "modern",
+            "target": "_self",
             "iconWindows": "images/theme.png",
             "description": {
                 "title": "Modern site theme",
@@ -118,6 +124,7 @@
             "title": "Vaporwave",
             "url": "/vapor",
             "var": "vapor",
+            "target": "_self",
             "iconWindows": "images/theme.png",
             "description": {
                 "title": "Vaporwave site theme",

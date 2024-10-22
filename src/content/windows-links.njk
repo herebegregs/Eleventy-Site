@@ -7,7 +7,7 @@ Links
 {% block windowContent %}
     <div class="explorer-pane">
         {% for link in navigation.links %}
-            <a class="explorer-icon" href={{link.url}} target="_blanks" data-details="{{link.var}}">
+            <a class="explorer-icon" href={{link.url}} target="{{link.target}}" data-details="{{link.var}}">
                 <img class="desktop-icon-img" src="{{link.iconWindows}}"/>
                 <p>{{link.title}}</p>
             </a>
