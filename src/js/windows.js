@@ -149,16 +149,68 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     let explorerPanes = document.querySelectorAll(".explorer-pane");
-    for(let i = 0; i < explorerPanes.length; i++) {
-        explorerPanes[i].addEventListener("click", function(e) {
+    explorerPanes.forEach(pane =>{
+        pane.addEventListener("click", function(e) {
             if(e.target === e.currentTarget){
-                deactivateDetails(explorerPanes[i]);
+                deactivateDetails(pane);
             }
         })
-    }
-    document.querySelectorAll('.splide').forEach(el => {
-        new Splide( '.splide' ).mount();
-      })
+    })
 
+    document.querySelectorAll(".collapser").forEach(collapser => {
+        collapser.addEventListener("click", function(e) {
+            collapser.classList.toggle("active");
+            let activeProject = collapser.closest("li[data-project").dataset.project;
+            console.log(activeProject)
+            document.querySelector("ul[data-project="+activeProject+"]").classList.toggle("collapsed");
+        });
+    });
+    
+    const helpProjects = document.querySelectorAll("#help-window .project");
+    const fileDisplays = document.querySelectorAll(".display-details li");
+    const fileList = document.querySelectorAll(".file")
+    
+    fileList.forEach(file => {
+        file.addEventListener("click", function(e) {
+            fileList.forEach(otherfile => {
+                if(otherfile != file) {
+                    otherfile.classList.remove("selected")
+                } else {
+                    otherfile.classList.add("selected")
+                }
+            });
+            if(!document.querySelector("#help-window").classList.contains("open")){
+                let portfolioTop = document.querySelector("#portfolio-window").offsetTop;
+                let portfolioWidth = document.querySelector("#portfolio-window").offsetWidth;
+                document.querySelector("#help-window").style.top = (portfolioTop + 40) + "px";
+                document.querySelector("#help-window").style.left = (portfolioWidth + 120) + "px";
+                document.querySelector("#help-window").classList.add("open");
+            }
+            let targetTopic = file.dataset.target;
+            let targetProject = file.closest("ul").dataset.project;
+            fileDisplays.forEach(display => {
+                if(display.dataset.target === targetTopic) {
+                    display.classList.add("active")
+                } else {
+                    display.classList.remove("active")
+                }
+            });
+            helpProjects.forEach(project => {
+                if(project.dataset.project ===  targetProject) {
+                    let projectTopics = project.querySelectorAll(".help-topic");
+                    projectTopics.forEach(topic => {
+                        if(topic.dataset.topic === targetTopic) {
+                            topic.classList.add("active")
+                        } else {
+                            topic.classList.remove("active")
+                        }
+                    })
+                    project.classList.add("active");
 
+                } else {
+                    project.classList.remove("active");
+                }
+            })
+        })
+    })
 }); 

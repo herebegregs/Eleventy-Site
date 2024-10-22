@@ -2,38 +2,35 @@
 {% block windowTitle %}
 {{ portfolio.title }} - {{ portfolio.subheading }}
 {% endblock %}
-{% block windowIcon %}
-<img class="win-icon" src="images/95Logo.png"/>
-{% endblock %}
 {% block windowContent %}
 <div class="file-pane">
     <div class="file-list">
         <ul>
             <li>{{ portfolio.heading }}</li>
             <ul>
-            {%for project in portfolio.projects %}
-                <li>{{ project.title }}</li>
-            {%endfor %}
+                {%for project in portfolio.projects %}
+                    <li data-project="{{project.var}}"><div class="collapser">{% svgIcon "_site/images/icons/plus.svg" %}{% svgIcon "_site/images/icons/minus.svg" %}</div>{{ project.title }}</li>
+                    <ul class="collapsed" data-project="{{project.var}}">
+                        {%for example in  project.examples%}
+                            <li class="file" data-target="{{project.var}}{{ loop.index }}"><img class="win-icon" src="images/image.png" alt="{{project.var}}_{{ loop.index }}.bmp">{{project.var}}_{{ loop.index }}.bmp</li>
+                        {% endfor %}
+                    </ul>
+                {%endfor %}
             </ul>
         </ul>
     </div>
     <div class="file-display">
+            <ul class="display-details">
         {%for project in portfolio.projects %}
-        <div class="splide" role="group" aria-label="Splide Basic HTML Example">
-  <div class="splide__track">
-            <ul class="display-details splide__list">
                 {%for example in  project.examples%}
-                    <li class="splide__slide">
+                    <li data-target="{{project.var}}{{ loop.index }}">
                         <figure>
                             <img src="{{ example.image }}" alt="{{ project.title }}">
-                            <p>{{ example.caption }}</p>
                         </figure>
                     </li>
                 {% endfor %}
-            </ul>
-    </div>
-    </div>
         {% endfor %}
+            </ul>
     </div>
 </div>
 {% endblock %}

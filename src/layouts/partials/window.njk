@@ -1,5 +1,8 @@
     <div class="title-bar">
+        <div class="left">
+        {% block windowIcon %}{% endblock %}
         {% block windowTitle %}{% endblock %}
+        </div>
         <div class="window-close">
             {% svgIcon "_site/images/icons/close.svg" %}
         </div>

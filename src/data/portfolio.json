@@ -6,6 +6,7 @@
         {
             "title": "Carma Impact Hub",
             "description": "My current work, built in Next.js with a Keystone.js backend",
+            "var": "carma",
             "examples": [
                 {
                     "image": "images/examples/carma/carma1.png",
@@ -46,6 +47,37 @@
                 {
                     "image": "images/examples/carma/carma10.png",
                     "caption": "Users can share their newly-customised, publicly-visible profile page with anyone to showcase the steps they have taken towards managing their carbon footprint."
+                }
+            ]
+        },
+        {
+        "title": "Affinity Workforce",
+            "description": "One of my more interesting projects from Electric Circus. A customer needed a full Wordpress site but on a very limited budget, working with our designers we came up with 6 highly configurable components that I then built. The was  pleased receieve a very flexible website that they have built up using just these 6 components.",
+            "var": "affinity",
+            "examples": [
+                {
+                    "image": "images/examples/affinity/pagebanner.png",
+                    "caption": "A banner element with options for text positioningm, text animations, CTA buttons and carousels."
+                },
+                {
+                    "image": "images/examples/affinity/customslider.png",
+                    "caption": "A carousel with completely customisable slides with provisions for links, text images and theme."
+                },
+                {
+                    "image": "images/examples/affinity/cardgrid.png",
+                    "caption": "A flexible section to display unlimited blocks of information with options for theme, block sizing text, imagery and CTA buttons."
+                },
+                {
+                    "image": "images/examples/affinity/blogcards.png",
+                    "caption": "A carousel similar to the custom slider that instead popoulates from Wordpress posts with specified tags.."
+                },
+                {
+                    "image": "images/examples/affinity/fullmedia.png",
+                    "caption": "A flexible full-width display for image and video content with an option for a modal video player."
+                },
+                {
+                    "image": "images/examples/affinity/twocolmedia.png",
+                    "caption": "A highly configurable general purpose component that allows for a single or two column layout with text and image content."
                 }
             ]
         }

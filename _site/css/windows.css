@@ -217,6 +217,11 @@
   flex-shrink: 0;
   flex-grow: 0;
 }
+.windows .window .title-bar .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .windows .window .title-bar .window-close {
   background-color: #c0c0c0;
   padding: 3px;
@@ -309,6 +314,101 @@
   flex-basis: 30%;
   border-right: 3px solid #c0c0c0;
 }
+.windows .window .window-content .file-pane .file-list ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: lighter;
+}
+.windows .window .window-content .file-pane .file-list ul li {
+  height: 18px;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid transparent;
+  line-height: 1;
+  margin-top: 2px;
+}
+.windows .window .window-content .file-pane .file-list ul li .collapser {
+  position: absolute;
+  display: flex;
+  height: 10px;
+  width: 10px;
+  background-color: #fff;
+  border: 1px solid #000;
+  left: -20px;
+  top: -1px;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+  cursor: pointer;
+}
+.windows .window .window-content .file-pane .file-list ul li .collapser svg:first-of-type {
+  display: block;
+}
+.windows .window .window-content .file-pane .file-list ul li .collapser svg:last-of-type {
+  display: none;
+}
+.windows .window .window-content .file-pane .file-list ul li .collapser.active svg:first-of-type {
+  display: none;
+}
+.windows .window .window-content .file-pane .file-list ul li .collapser.active svg:last-of-type {
+  display: block;
+}
+.windows .window .window-content .file-pane .file-list ul li:hover {
+  border: 1px dotted;
+}
+.windows .window .window-content .file-pane .file-list ul ul {
+  display: block;
+  margin-left: 20px;
+  position: relative;
+}
+.windows .window .window-content .file-pane .file-list ul ul:before {
+  content: "";
+  width: 1px;
+  height: 12px;
+  border-right: 1px dotted;
+  position: absolute;
+  left: -15px;
+  top: -5px;
+}
+.windows .window .window-content .file-pane .file-list ul ul:after {
+  content: "";
+  width: 13px;
+  height: 1px;
+  border-top: 1px dotted;
+  position: absolute;
+  left: -14px;
+  top: 8px;
+}
+.windows .window .window-content .file-pane .file-list ul ul li.selected {
+  border: 1px dotted;
+  background-color: #000080;
+  color: #fff;
+}
+.windows .window .window-content .file-pane .file-list ul ul li:not(:first-of-type):before {
+  content: "";
+  width: 1px;
+  height: 22px;
+  border-right: 1px dotted;
+  position: absolute;
+  left: -16px;
+  top: -13px;
+}
+.windows .window .window-content .file-pane .file-list ul ul li:not(:first-of-type):after {
+  content: "";
+  width: 13px;
+  height: 1px;
+  border-top: 1px dotted;
+  position: absolute;
+  left: -12px;
+  top: 8px;
+}
+.windows .window .window-content .file-pane .file-list ul ul.collapsed {
+  display: none;
+}
 .windows .window .window-content .file-pane .file-display {
   padding: 5px;
   flex-basis: 100%;
@@ -318,24 +418,96 @@
 .windows .window .window-content .file-pane .file-display ul {
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .windows .window .window-content .file-pane .file-display ul li {
-  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 .windows .window .window-content .file-pane .file-display ul li figure {
   margin: 0 auto;
   aspect-ratio: 16/9;
-  max-height: 200px;
+  max-width: 95%;
 }
 .windows .window .window-content .file-pane .file-display ul li figure img {
   object-fit: contain;
   width: 100%;
   height: auto;
   max-height: 100%;
-  margin-bottom: 15px;
+  border: 1px solid #000;
 }
 .windows .window .window-content .file-pane .file-display ul li figure p {
   text-align: center;
+}
+.windows .window .window-content .file-pane .file-display ul li.active {
+  display: flex;
+}
+.windows .window .window-content .help-pane {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.windows .window .window-content .help-pane .action-bar {
+  background-color: #c0c0c0;
+}
+.windows .window .window-content .help-pane .action-bar ul {
+  display: flex;
+  align-items: center;
+}
+.windows .window .window-content .help-pane .action-bar ul li {
+  display: flex;
+  align-items: center;
+  color: #000;
+  padding: 5px 10px;
+}
+.windows .window .window-content .help-pane .help-contents {
+  padding: 10px 15px;
+  display: block;
+  flex-grow: 1;
+  background-color: #ffffdf;
+}
+.windows .window .window-content .help-pane .help-contents .project {
+  display: none;
+  gap: 10px;
+  flex-direction: column;
+}
+.windows .window .window-content .help-pane .help-contents .project .help-title {
+  font-weight: bold;
+}
+.windows .window .window-content .help-pane .help-contents .project .help-description {
+  position: relative;
+  line-height: 1.5;
+}
+.windows .window .window-content .help-pane .help-contents .project .help-description:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 90%;
+  height: 1px;
+  background-color: #c0c0c0;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.windows .window .window-content .help-pane .help-contents .project .help-topic {
+  display: none;
+}
+.windows .window .window-content .help-pane .help-contents .project .help-topic p {
+  line-height: 1.5;
+}
+.windows .window .window-content .help-pane .help-contents .project .help-topic.active {
+  display: block;
+}
+.windows .window .window-content .help-pane .help-contents .project.active {
+  display: flex;
+}
+.windows .window#help-window {
+  z-index: 99;
+  height: auto;
+  max-width: 300px;
 }
 .windows .window.open {
   display: flex;

@@ -1,0 +1,30 @@
+{% extends "partials/window.njk" %}
+{% block windowTitle %}
+{{ portfolio.title }} - Help
+{% endblock %}
+{% block windowIcon %}
+<img class="win-icon" src="images/help.png"/>
+{% endblock %}
+{% block windowContent %}
+<div class="help-pane">
+    <div class="action-bar">
+        <ul>
+            <li class="prev">Previous</li>
+            <li class="next">Next</li>
+        </ul>
+    </div>
+    <div class="help-contents">
+        {%for project in portfolio.projects %}
+            <div class="project" data-project="{{project.var}}">
+                <p class="help-title">{{ project.title }}</p>
+                <p class="help-description">{{ project.description }}</p>
+                {%for example in  project.examples%}
+                    <div class="help-topic" data-topic="{{project.var}}{{ loop.index }}">
+                        <p>{{ example.caption }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
