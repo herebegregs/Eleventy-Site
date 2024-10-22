@@ -18,6 +18,7 @@
         justify-content: space-between;
         align-items: center;
         border-top: 2px solid #fff;
+        z-index: 9999999999;
         #start-button {
             display: flex;
             padding: 3px 5px;
@@ -171,7 +172,6 @@
             }
         }
     }
-
     .desktop {
         flex-grow: 1;
         display: grid;
@@ -180,7 +180,6 @@
         gap: 20px;
         padding: 15px;
     }
-
     .desktop-icon {
         padding: 5px 0;
         display: inline-flex;
@@ -471,7 +470,9 @@
                                     max-height: 100%;
                                     border: 1px solid #000;
                                 }
-                                p {
+                                figcaption {
+                                    display: none;
+                                    margin-top: 10px;
                                     text-align: center;
                                 }
                             }
@@ -550,6 +551,38 @@
         }
         &.open {
             display: flex;
+        }
+    }
+    @media (max-width: 768px) {
+        .window {
+            height: auto;
+            width: auto;
+            inset: 0 0 42px 0;
+            .window-content {
+                .file-pane {
+                    flex-direction: column;
+                    .file-list {
+                        border-bottom: 3px solid #c0c0c0;
+                        border-right: none;
+                    }
+                    .file-display {
+                        border-top: 3px solid #808080;
+                        border-left: none;
+                        .display-details {
+                            li {
+                                figure {
+                                    figcaption {
+                                        display: block;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #help-window {
+            display: none !important
         }
     }
 }

@@ -29,10 +29,12 @@ document.addEventListener('DOMContentLoaded', function(){
         openers[i].addEventListener("click", function() {
             activeWindows = document.querySelectorAll(".window.open");
             if(activeWindows.length > 0){
-                let lastTop = activeWindows[activeWindows.length -1].offsetTop;
-                let lastLeft = activeWindows[activeWindows.length -1].offsetLeft;
-                document.getElementById(target).style.top = (lastTop + 40) + "px";
-                document.getElementById(target).style.left = (lastLeft + 40) + "px";
+                if(window.innerWidth > 768){
+                    let lastTop = activeWindows[activeWindows.length -1].offsetTop;
+                    let lastLeft = activeWindows[activeWindows.length -1].offsetLeft;
+                    document.getElementById(target).style.top = (lastTop + 40) + "px";
+                    document.getElementById(target).style.left = (lastLeft + 40) + "px";
+                }
                 activateWindow(document.getElementById(target));
             }
             document.getElementById(target).classList.add("open");
@@ -186,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     otherfile.classList.add("selected")
                 }
             });
-            if(!document.querySelector("#help-window").classList.contains("open")){
+            if(!document.querySelector("#help-window").classList.contains("open") && window.innerWidth > 768){
                 let portfolioTop = document.querySelector("#portfolio-window").offsetTop;
                 let portfolioWidth = document.querySelector("#portfolio-window").offsetWidth;
                 document.querySelector("#help-window").style.top = (portfolioTop + 40) + "px";

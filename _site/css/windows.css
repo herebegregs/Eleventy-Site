@@ -17,6 +17,7 @@
   justify-content: space-between;
   align-items: center;
   border-top: 2px solid #fff;
+  z-index: 9999999999;
 }
 .windows #task-bar #start-button {
   display: flex;
@@ -439,7 +440,9 @@
   max-height: 100%;
   border: 1px solid #000;
 }
-.windows .window .window-content .file-pane .file-display ul li figure p {
+.windows .window .window-content .file-pane .file-display ul li figure figcaption {
+  display: none;
+  margin-top: 10px;
   text-align: center;
 }
 .windows .window .window-content .file-pane .file-display ul li.active {
@@ -511,6 +514,30 @@
 }
 .windows .window.open {
   display: flex;
+}
+@media (max-width: 768px) {
+  .windows .window {
+    height: auto;
+    width: auto;
+    inset: 0 0 42px 0;
+  }
+  .windows .window .window-content .file-pane {
+    flex-direction: column;
+  }
+  .windows .window .window-content .file-pane .file-list {
+    border-bottom: 3px solid #c0c0c0;
+    border-right: none;
+  }
+  .windows .window .window-content .file-pane .file-display {
+    border-top: 3px solid #808080;
+    border-left: none;
+  }
+  .windows .window .window-content .file-pane .file-display .display-details li figure figcaption {
+    display: block;
+  }
+  .windows #help-window {
+    display: none !important;
+  }
 }
 
 /*# sourceMappingURL=windows.css.map */
