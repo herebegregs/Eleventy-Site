@@ -9,8 +9,15 @@ document.addEventListener('DOMContentLoaded', function(){
 
     document.getElementById("clock").textContent = `${hours}:${minutes}`
 
-    document.getElementById("start-button").addEventListener("click", function() {
+    document.getElementById("start-button").addEventListener("click", function(event) {
         document.getElementById("task-bar").classList.toggle("start-open");
+        event.stopImmediatePropagation();
+        document.addEventListener("click", function(e) {
+            if(e.target != document.querySelector("#start-menu")){
+                document.getElementById("task-bar").classList.remove("start-open");
+                document.removeEventListener("click", function(){});
+            }
+        })
     })
 
     //open windows
