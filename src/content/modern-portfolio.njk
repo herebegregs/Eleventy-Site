@@ -1,9 +1,17 @@
 {% extends "partials/modern-tab.njk" %}
-{% block windowTitle %}
+
+{% block tabTitle %}
 {{ portfolio.title }}
 {% endblock %}
-{% block windowIcon %}
+
+{% block tabVar %}
+{{portfolio.var}}
 {% endblock %}
-{% block windowContent %}
-<h1>{{ portfolio.heading }}</h1>
+
+{% block tabIcon %}
+{% svgIcon "_site/images/icons/work.svg" %}
+{% endblock %}
+
+{% block tabContent %}
+    <h1>{{ portfolio.heading }}</h1>
 {% endblock %}

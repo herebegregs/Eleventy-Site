@@ -39,8 +39,18 @@
   -webkit-backdrop-filter: blur(4px);
   pointer-events: all;
   min-height: 200px;
+  cursor: pointer;
 }
-.modern .page-tab .page-edge span {
+.modern .page-tab .page-edge .edge-cluster {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.modern .page-tab .page-edge .edge-cluster svg path {
+  fill: #fff;
+}
+.modern .page-tab .page-edge .edge-cluster span {
   writing-mode: vertical-lr;
   transform: translateY(5px);
 }
@@ -65,6 +75,53 @@
   background: #1e293b;
   border: 1px solid rgba(255, 255, 255, 0.18);
   position: relative;
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.modern .page-tab .page-content .page-wrapper ul {
+  margin-top: 40px;
+}
+.modern .page-tab .page-content .page-wrapper ul li {
+  margin-bottom: 20px;
+}
+.modern .page-tab .page-content .flyout {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  width: 20vw;
+  max-width: 400px;
+  min-width: 200px;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  transition: all 0.2s ease-in-out, display 0s allow-discrete;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-right: none;
+  padding: 40px;
+  pointer-events: none;
+}
+.modern .page-tab .page-content .flyout .flyout-details {
+  position: absolute;
+  transition: all 0.2s ease-in-out, display 0s allow-discrete;
+  opacity: 0;
+  pointer-events: none;
+  flex-direction: column;
+  gap: 20px;
+  display: none;
+}
+.modern .page-tab .page-content .flyout .flyout-details.active {
+  display: flex;
+  position: relative;
+  opacity: 1;
+  pointer-events: all;
+}
+.modern .page-tab .page-content .flyout.open {
+  opacity: 1;
 }
 .modern .page-tab:before {
   content: "";
@@ -90,59 +147,6 @@
 }
 .modern .page-tab:last-of-type .page-edge {
   margin-bottom: 0;
-}
-.modern #modern-menu .page-edge {
-  min-height: 0;
-}
-.modern #modern-menu .page-content .page-wrapper ul {
-  margin-top: 40px;
-}
-.modern #modern-menu .page-content .page-wrapper ul li {
-  margin-bottom: 20px;
-}
-.modern #modern-menu .page-content .flyout {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-  width: 20vw;
-  max-width: 400px;
-  min-width: 200px;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  transition: all 0.2s ease-in-out, display 0s allow-discrete;
-  border-top-left-radius: 40px;
-  border-bottom-left-radius: 40px;
-  background: rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-right: none;
-  padding: 40px;
-  pointer-events: none;
-}
-.modern #modern-menu .page-content .flyout .flyout-details {
-  position: absolute;
-  transition: all 0.2s ease-in-out, display 0s allow-discrete;
-  opacity: 0;
-  pointer-events: none;
-  flex-direction: column;
-  gap: 20px;
-  display: none;
-}
-.modern #modern-menu .page-content .flyout .flyout-details.active {
-  display: flex;
-  position: relative;
-  opacity: 1;
-  pointer-events: all;
-}
-.modern #modern-menu .page-content .flyout.open {
-  opacity: 1;
-}
-.modern #modern-menu svg {
-  height: 25px;
-  width: 25px;
-}
-.modern #modern-menu svg path {
-  stroke: #fff;
 }
 .modern .backdrop {
   height: 100dvh;

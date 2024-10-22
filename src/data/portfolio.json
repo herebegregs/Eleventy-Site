@@ -1,5 +1,6 @@
 {
     "title": "Portfolio",
+    "var": "portfolio",
     "heading": "Some stuff I made",
     "subheading": "(I make websites)",
     "projects": [

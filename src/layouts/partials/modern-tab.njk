@@ -1,8 +1,8 @@
-<div class="page-tab">
+<div class="page-tab" data-tab={% block tabVar %}{% endblock%}>
     <div class="page-content">
-        {% block windowContent %}{% endblock%}
+        {% block tabContent %}{% endblock%}
     </div>
     <div class="page-edge">
-        <span>{% block windowTitle %}{% endblock %}</span>
+        <div class="edge-cluster">{% block tabIcon %}{% endblock %}<span>{% block tabTitle %}{% endblock %}</span></div>
     </div>
 </div>

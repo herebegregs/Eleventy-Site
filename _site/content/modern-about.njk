@@ -1,10 +1,21 @@
 {% extends "partials/modern-tab.njk" %}
-{% block windowTitle %}
+
+{% block tabTitle %}
 {{ about.title }}
 {% endblock %}
-{% block windowContent %}
-<div class="page-wrapper">
-    <h1 class="super-size">{{ about.heading }}</h1>
-    <h5 class="super-size">{{ about.subheading }}</h5>
-</div>
+
+{% block tabVar %}
+{{about.var}}
+{% endblock %}
+
+{% block tabIcon %}
+{% svgIcon "_site/images/icons/person.svg" %}
+{% endblock %}
+
+{% block tabContent %}
+    <div class="page-wrapper">
+        <h1 class="super-size">{{ about.heading }}</h1>
+        <h5 class="super-size">{{ about.description }}</h5>
+        <p>{{ about.subheading }}</p>
+    </div>
 {% endblock %}

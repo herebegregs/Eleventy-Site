@@ -1,6 +1,7 @@
 {
     "title": "About Me",
+    "var": "about",
     "heading": "Hi, I'm Greg",
     "subheading": "(I make websites)",
-    "description": "Self-taught web developer fueled by tea and a curious love of 80s synth"
+    "description": "A self-taught web developer fueled by tea and a curious love of 80s synth"
 }

@@ -7,20 +7,24 @@ Links
 {% block windowContent %}
     <div class="explorer-pane">
         {% for link in navigation.links %}
+        {% if link.var != 'windows' %}
             <a class="explorer-icon" href={{link.url}} target="{{link.target}}" data-details="{{link.var}}">
                 <img class="desktop-icon-img" src="{{link.iconWindows}}"/>
                 <p>{{link.title}}</p>
             </a>
+        {% endif %}
         {% endfor %}
     </div>
     <div class="details-pane">
         {% for link in navigation.links %}
+        {% if link.var != 'windows' %}
             <div class="details" data-details="{{link.var}}">
                 <h4>{{ link.description.title }}</h4>
                 {% for line in link.description.details %}
                     <p>{{ line.line }}</p>
                 {% endfor %}
             </div>
+        {% endif %}
         {% endfor %}
     </div>
 {% endblock %}

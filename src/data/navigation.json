@@ -121,6 +121,21 @@
             }
         },
         {
+            "title": "Greg '95",
+            "url": "/",
+            "var": "windows",
+            "target": "_self",
+            "iconWindows": "images/theme.png",
+            "description": {
+                "title": "Retro site theme",
+                "details": [
+                    {
+                        "line": "Browsing like is 1995!"
+                    }
+                ]
+            }
+        },
+        {
             "title": "Vaporwave",
             "url": "/vapor",
             "var": "vapor",
