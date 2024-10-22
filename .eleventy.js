@@ -5,6 +5,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setInputDirectory("src");
   eleventyConfig.setIncludesDirectory("layouts");
   eleventyConfig.setDataDirectory("data")
+  eleventyConfig.addPassthroughCopy("./src/docs");
   eleventyConfig.addPassthroughCopy("./src/images");
   eleventyConfig.addPassthroughCopy("./src/content");
   eleventyConfig.addPassthroughCopy("./src/fonts");

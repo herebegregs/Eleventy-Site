@@ -24,6 +24,34 @@
     ],
     "links": [
         {
+            "title": "My CV",
+            "url": "../docs/GregMorris.pdf",
+            "var": "cv",
+            "iconWindows": "images/cv.png",
+            "description": {
+                "title": "My CV",
+                "details": [
+                    {
+                        "line":"My current CV"
+                    }
+                ]
+            }
+        },
+        {
+            "title": "My Alternative CV",
+            "url": "../docs/GregMorrisAlt.pdf",
+            "var": "cvalt",
+            "iconWindows": "images/cv.png",
+            "description": {
+                "title": "My Alternative CV",
+                "details": [
+                    {
+                        "line":"An accessible version of my CV"
+                    }
+                ]
+            }
+        },
+        {
             "title": "Carma Impact Hub",
             "url": "https://impact.carma.earth",
             "var": "carma",
