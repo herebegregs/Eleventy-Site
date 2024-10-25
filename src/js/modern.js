@@ -67,8 +67,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const tiltX = reverse * (settings.max / 2 - x * settings.max);
     const tiltY = reverse * (y * settings.max - settings.max / 2);
     elTilt.style.transform = `
-        rotateX(${settings.axis === "x" ? 0 : tiltY}deg)
-        rotateY(${settings.axis === "y" ? 0 : tiltX}deg)
+        rotateX(${settings.axis === "x" ? 0 : -tiltY}deg)
+        rotateY(${settings.axis === "y" ? 0 : -tiltX}deg)
         translateY(${settings.axis === "y" ? 0 : tiltY}px)
         scale(${settings.scale})
     `;
