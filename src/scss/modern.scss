@@ -80,12 +80,6 @@
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
-                >ul {
-                    margin-top: 40px;
-                    li:not(:last-of-type) {
-                        margin-bottom: 20px;
-                    }
-                }
                 .seperator {
                     height: 90%;
                     width: 1px;
@@ -94,6 +88,14 @@
                         width: 90%;
                         height: 1px;
                         margin: 0 5%;
+                    }
+                }
+                .links-menu {
+                    ul {
+                        margin-top: 40px;
+                        li:not(:last-of-type) {
+                            margin-bottom: 20px;
+                        }
                     }
                 }
                 .slider-display {

@@ -80,12 +80,6 @@
   flex-direction: column;
   gap: 30px;
 }
-.modern .page-tab .page-content .page-wrapper > ul {
-  margin-top: 40px;
-}
-.modern .page-tab .page-content .page-wrapper > ul li:not(:last-of-type) {
-  margin-bottom: 20px;
-}
 .modern .page-tab .page-content .page-wrapper .seperator {
   height: 90%;
   width: 1px;
@@ -95,6 +89,12 @@
   width: 90%;
   height: 1px;
   margin: 0 5%;
+}
+.modern .page-tab .page-content .page-wrapper .links-menu ul {
+  margin-top: 40px;
+}
+.modern .page-tab .page-content .page-wrapper .links-menu ul li:not(:last-of-type) {
+  margin-bottom: 20px;
 }
 .modern .page-tab .page-content .page-wrapper .slider-display {
   display: flex;
