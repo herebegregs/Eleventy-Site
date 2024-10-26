@@ -11,10 +11,10 @@ jobs:
       # Node version. Otherwise the Node version installed
       # on the GitHub VM will be used. For more details
       # see: https://github.com/actions/virtual-environments 
-      # - name: Setup Node.js environment
-      #   uses: actions/setup-node@v2.1.4
-      #   with:
-      #     node-version: '15.7.0'
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.4
+        with:
+          node-version: '22.10.0'
 
       # Uncomment if your project uses dependencies
       - name: Install dependencies
