@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@vlatest
+        uses: actions/checkout@latest
 
       # Uncomment if you want to specify a certain 
       # Node version. Otherwise the Node version installed
