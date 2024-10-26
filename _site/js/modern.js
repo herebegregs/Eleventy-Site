@@ -75,4 +75,26 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     elWrap.addEventListener("pointermove", tilt);
+
+    var elms = document.querySelectorAll('.splide' );
+
+    elms.forEach(elm =>{
+    new Splide( elm ).mount();
+    })
+
+    const sliderButtons = document.querySelectorAll(".slider-display ul.project-list li");
+    sliderButtons.forEach(button => {
+        button.addEventListener("click", function(){
+            let target = button.dataset.project;
+            console.log("target", target)
+            elms.forEach(elm => {
+                console.log("remove all", elm.dataset.project)
+                elm.classList.remove("active");
+                if(elm.dataset.project === target) {
+                    
+                    elm.classList.add("active");
+                }
+            });
+        })
+    })
 });

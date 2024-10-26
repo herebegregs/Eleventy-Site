@@ -80,11 +80,77 @@
   flex-direction: column;
   gap: 30px;
 }
-.modern .page-tab .page-content .page-wrapper ul {
+.modern .page-tab .page-content .page-wrapper > ul {
   margin-top: 40px;
 }
-.modern .page-tab .page-content .page-wrapper ul li {
+.modern .page-tab .page-content .page-wrapper > ul li:not(:last-of-type) {
   margin-bottom: 20px;
+}
+.modern .page-tab .page-content .page-wrapper .seperator {
+  height: 90%;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.18);
+}
+.modern .page-tab .page-content .page-wrapper .seperator.horizontal {
+  width: 90%;
+  height: 1px;
+  margin: 0 5%;
+}
+.modern .page-tab .page-content .page-wrapper .slider-display {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+.modern .page-tab .page-content .page-wrapper .slider-display .project-list {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.modern .page-tab .page-content .page-wrapper .slider-display .project-list li {
+  cursor: pointer;
+}
+.modern .page-tab .page-content .page-wrapper .slider-display h1 {
+  flex-basis: 100%;
+}
+.modern .page-tab .page-content .page-wrapper .slider-display .slider-section {
+  flex-basis: 75%;
+  max-width: 75%;
+  padding-bottom: 30px;
+}
+.modern .page-tab .page-content .page-wrapper .slider-display .slider-section .project {
+  display: none;
+  position: relative;
+}
+.modern .page-tab .page-content .page-wrapper .slider-display .slider-section .project .folio-list .folio-slide {
+  max-width: 100%;
+}
+.modern .page-tab .page-content .page-wrapper .slider-display .slider-section .project .folio-list .folio-slide figure {
+  max-width: 100%;
+  aspect-ratio: 16/9;
+}
+.modern .page-tab .page-content .page-wrapper .slider-display .slider-section .project .folio-list .folio-slide figure img {
+  object-fit: contain;
+  width: 100%;
+  max-height: 100%;
+  margin-bottom: 20px;
+}
+.modern .page-tab .page-content .page-wrapper .slider-display .slider-section .project .folio-list .folio-slide figure figcaption {
+  text-align: center;
+}
+.modern .page-tab .page-content .page-wrapper .slider-display .slider-section .project .splide__arrows {
+  position: absolute;
+  width: 100%;
+  bottom: -15px;
+}
+.modern .page-tab .page-content .page-wrapper .slider-display .slider-section .project .splide__pagination {
+  position: absolute;
+  bottom: -25px;
+}
+.modern .page-tab .page-content .page-wrapper .slider-display .slider-section .project.active {
+  display: block;
 }
 .modern .page-tab .page-content .flyout {
   position: absolute;

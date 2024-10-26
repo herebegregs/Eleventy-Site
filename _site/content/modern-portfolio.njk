@@ -13,5 +13,35 @@
 {% endblock %}
 
 {% block tabContent %}
-    <h1>{{ portfolio.heading }}</h1>
+    <div class="page-wrapper row">
+        <h1>{{ portfolio.heading }}</h1>
+        <div class="slider-display">
+            <ul class="project-list">
+                {%for project in portfolio.projects %}
+                    <li data-project="{{project.var}}">{{ project.title }}</li>
+                {%endfor %}
+            </ul>
+            <div class="seperator"></div>
+            <div class="slider-section">
+                {%for project in portfolio.projects %}
+                <section class="project splide{% if loop.index === 1%} active{% endif %}" aria-label="{{project.title}}" data-project="{{project.var}}">
+                    <div class="splide__track">
+                        <ul class="folio-list splide__list">
+                            {%for example in  project.examples%}
+                                <li class="folio-slide splide__slide" data-target="{{project.var}}">
+                                    <figure>
+                                        <img src="/{{example.image}}" alt="{{project.var}}{{ loop.index }}">
+                                        <figcaption>
+                                            {{example.caption}}
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </section>
+                {%endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock %}

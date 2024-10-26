@@ -80,10 +80,79 @@
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
-                ul {
+                >ul {
                     margin-top: 40px;
-                    li {
+                    li:not(:last-of-type) {
                         margin-bottom: 20px;
+                    }
+                }
+                .seperator {
+                    height: 90%;
+                    width: 1px;
+                    background-color: rgba( 255, 255, 255, 0.18 );
+                    &.horizontal {
+                        width: 90%;
+                        height: 1px;
+                        margin: 0 5%;
+                    }
+                }
+                .slider-display {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 20px;
+                    .project-list {
+                        margin: 0;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        li {
+                            cursor: pointer;
+                        }
+                    }
+                    h1 {
+                        flex-basis: 100%;
+                    }
+                    .slider-section {
+                        flex-basis: 75%;
+                        max-width: 75%;
+                        padding-bottom: 30px;
+                        .project {
+                            display: none;
+                            position: relative;
+                            .folio-list {
+                                .folio-slide {
+                                    max-width: 100%;
+                                    figure {
+                                        max-width: 100%;
+                                        aspect-ratio: 16 / 9;
+                                        img {
+                                            object-fit: contain;
+                                            width: 100%;
+                                            max-height: 100%;
+                                            margin-bottom: 20px;
+                                        }
+                                        figcaption {
+                                            text-align: center;
+    
+                                        }
+                                    }
+                                }
+                            }
+                            .splide__arrows {
+                                position: absolute;
+                                width: 100%;
+                                bottom: -15px;
+                            }
+                            .splide__pagination {
+                                position: absolute;
+                                bottom: -25px;
+                            }
+                            &.active {
+                                display: block;
+                            }
+                        }
                     }
                 }
             }
