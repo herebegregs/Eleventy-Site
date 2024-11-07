@@ -1,8 +1,12 @@
-<div class="page-tab" data-tab={% block tabVar %}{% endblock%}>
+{% set varName %}
+{% block tabVar %}{% endblock%}
+{% endset %}
+
+<div class="page-tab" data-page={{ varName }}>
     <div class="page-content">
         {% block tabContent %}{% endblock%}
     </div>
-    <div class="page-edge">
+    <div class="page-edge" data-tab={{ varName }}>
         <div class="edge-cluster">{% block tabIcon %}{% endblock %}<span>{% block tabTitle %}{% endblock %}</span></div>
     </div>
 </div>

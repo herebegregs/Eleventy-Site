@@ -2,25 +2,58 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const resetTab = "translateX(calc(-100% + 42px))";
 
-    const tabs = document.getElementsByClassName("page-edge");
-    for(let i = 0; i < tabs.length; i++) {
-        // tabs[i].style.setProperty("height", "calc((100dvh/"+tabs.length+") - (30px - "+10/tabs.length+"px))");
-        tabs[i].addEventListener("click", function() {
-            if(tabs[i].closest(".page-tab").classList.contains("open")) {
-                tabs[i].closest(".page-tab").classList.toggle("open")
-            } else {
-                for(let j = 0; j < tabs.length; j++) {
-                    tabs[j].closest(".page-tab").classList.remove("open");
+    const tabs = document.querySelectorAll("[data-tab]");
+    const mobileTabs = document.querySelectorAll("[data-mobile]");
+    console.log(tabs)
+    const pages = document.querySelectorAll("[data-page]");
+    tabs.forEach(tab =>{
+        tab.addEventListener("click", function() {
+            let target = tab.dataset.tab;
+            console.log(target)
+            pages.forEach(page => {
+                console.log(page.classList)
+                if(page.dataset.page === target) {
+                    console.log("is open")
+                    page.classList.toggle("open");
+                } else {
+                    page.classList.remove("open");
                 }
-                tabs[i].closest(".page-tab").classList.toggle("open");
-            }
-        })
+            })
+        });
+    });
+    mobileTabs.forEach(tab =>{
+        tab.addEventListener("click", function() {
+            let target = tab.dataset.mobile;
+            console.log(target)
+            pages.forEach(page => {
+                console.log(page.classList)
+                if(page.dataset.page === target) {
+                    console.log("is open")
+                    page.classList.toggle("open");
+                } else {
+                    page.classList.remove("open");
+                }
+            })
+        });
+    });
+
+    let aligned = false;
+    function alignTabs(){
+        console.log("aligning")
+        for(let i = 1; i < tabs.length; i++) {
+            let prevTab = tabs[i-1].getBoundingClientRect();
+            console.log(prevTab.height)
+            tabs[i].style.top = prevTab.bottom+"px";
+        }
     }
-    for(let i = 1; i < tabs.length; i++) {
-        let prevTab = tabs[i-1].getBoundingClientRect();
-        tabs[i].style.top = prevTab.bottom+"px";
-    }
-    let mainMenu = document.querySelector("[data-tab='links'] .page-content");
+    alignTabs();
+    // window.addEventListener("resize", function(e){
+    //     if(window.innerWidth > 1024 && aligned === false) {
+    //         this.setTimeout(alignTabs(), 30000);
+    //         aligned = true;
+    //     }
+    // })
+    let mainMenu = document.querySelector("[data-page='links'] .page-content");
     let links = mainMenu.querySelectorAll("ul li[data-details]");
     let flyout = mainMenu.querySelector(".flyout");
     let flyoutDetails = mainMenu.querySelectorAll("[data-details");

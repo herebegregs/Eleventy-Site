@@ -88,5 +88,31 @@ body button {
 body ul {
   list-style-type: none;
 }
+@media (max-width: 768px) {
+  body h1 {
+    font-size: 2.4rem;
+  }
+  body h1.super-size {
+    font-size: 2.4rem;
+  }
+  body h2.super-size {
+    font-size: 3rem;
+  }
+  body h3.super-size {
+    font-size: 2.6rem;
+  }
+  body h4.super-size {
+    font-size: 2.2rem;
+  }
+  body h5.super-size {
+    font-size: 1.8rem;
+  }
+  body p, body a {
+    font-weight: 500;
+  }
+  body p.super-size, body a.super-size {
+    font-size: 1.6rem;
+  }
+}
 
 /*# sourceMappingURL=global.css.map */

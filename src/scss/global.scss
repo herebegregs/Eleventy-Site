@@ -92,4 +92,38 @@ body {
     ul {
         list-style-type: none;
     }
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2.4rem;
+            &.super-size {
+                font-size: 2.4rem;
+            }
+        }
+        h2 {
+            &.super-size {
+                font-size: 3rem;
+            }
+        }
+        h3{
+            &.super-size {
+                font-size: 2.6rem;
+            }
+        } 
+        h4{
+            &.super-size {
+                font-size: 2.2rem;
+            }
+        } 
+        h5{
+            &.super-size {
+                font-size: 1.8rem;
+            }
+        } 
+        p, a {
+            font-weight: 500;
+            &.super-size {
+                font-size: 1.6rem;
+            }
+        }
+    }
 }    
