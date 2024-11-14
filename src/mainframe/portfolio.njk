@@ -1,0 +1,54 @@
+---
+layout: mainframe.njk
+title: Greg Morris
+---
+{% extends "partials/mainframe-screen.njk" %}
+    
+{% block pageContent %}
+    <div class="text-content typed-content">
+        <h1 class="type">{{ portfolio.title }}</h1>
+    </div>
+    <div class="portfolio-tabs">
+        {%for project in portfolio.projects %}
+            <div class="text-content typed-content">
+                <p class="type"data-project="{{project.var}}">{{ project.title }}</p>
+            </div>
+        {%endfor %}
+    </div>
+    <div class="seperator"></div>
+    <div class="slider-section">
+        {%for project in portfolio.projects %}
+            <section class="project splide{% if loop.index === 1%} active{% endif %}" aria-label="{{project.title}}" data-project="{{project.var}}">
+                <div class="splide__track">
+                    <ul class="folio-list splide__list">
+                        {%for example in  project.examples%}
+                            <li class="folio-slide splide__slide" data-target="{{project.var}}">
+                                <figure>
+                                    <img src="/{{example.image}}" alt="{{project.var}}{{ loop.index }}">
+                                    <figcaption>
+                                        <span class="fig-type">{{example.caption}}</span>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </section>
+        {%endfor %}
+    </div>
+    <div class="text-content typed-content">
+        <p class="type">{{ portfolio.heading }}</p>
+    </div>
+{% endblock %}
+
+
+
+{% block topRightContent %}
+    {# <p>TOP RIGHT</p> #}
+{% endblock %}
+{% block centerRightContent %}
+    {# <p>center RIGHT</p> #}
+{% endblock %}
+{% block bottomRightContent %}
+    {# <p>Bottom RIGHT</p> #}
+{% endblock %}

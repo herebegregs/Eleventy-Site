@@ -1,0 +1,98 @@
+<div class="main-content">
+    {% block pageContent %}{% endblock %}
+    <div id="prayer"><span></span></div>
+</div>
+<div class="top-right info-box">
+    <div class="title-bar">
+        <h4>Operations</h3>
+    </div>
+    <div class="box-content">
+        <div class="operation-content navigation">
+            <div class="text-content typed-content">
+                <p class="type" data-target="pages">Pages</p>
+            </div>
+            <div class="text-content typed-content">
+                <p class="type" data-target="links">Links</p>
+            </div>
+        </div>
+        {% block topRightContent %}{% endblock %}
+    </div>
+</div>
+<div class="center-right info-box">
+    <div class="title-bar">
+        <h4>Actions</h3>
+    </div>
+    <div class="box-content">
+        <div class="menu-content content-item active">
+            <div class="text-content typed-content">
+                <p class="type">Awaiting input...</p>
+            </div>
+        </div>
+        <div class="menu-content content-item" data-action="pages">
+            <div class="text-content typed-content">
+                <a class="type" href="/mainframe" data-link="home">Home</a>
+            </div>
+            {% for nav in navigation.pages %}
+                <div class="text-content typed-content">
+                    <a class="type" href="/mainframe{{ nav.url }}" data-link="{{nav.var}}">{{ nav.title }}</a>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="menu-content content-item" data-action="links">
+            {% for nav in navigation.links %}
+                {% if nav.url != '/mainframe' %}
+                    <div class="text-content typed-content">
+                        <a class="type" target="{{ nav.target }}" href="{{ nav.url }}" data-link="{{nav.var}}">{{ nav.title }}</a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        {% block centerRightContent %}{% endblock %}
+    </div>
+</div>
+<div class="bottom-right info-box">
+    <div class="title-bar">
+        <h4>Information</h3>
+    </div>
+    <div class="box-content">
+        <div class="info-content content-item active" data-info="userInfo">
+        </div>
+        <div class="info-content content-item" data-info="home">
+            <div class="text-content typed-content">
+                <h4 class="type">Home</h4>
+            </div>
+            <div class="text-content typed-content">
+                <p class="type">Back to the terminal home</p>
+            </div>
+        </div>
+         {% for page in navigation.pages %}
+            {% if page.url != '/mainframe' %}
+                <div class="info-content content-item" data-info="{{ page.var }}">
+                    <div class="text-content typed-content">
+                        <h4 class="type">{{ page.title }}</h4>
+                    </div>
+                    {% for line in page.description.details %}
+                        <div class="text-content typed-content">
+                            <p class="type">{{ line.line }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endfor %}
+         {% for nav in navigation.links %}
+            {% if nav.url != '/mainframe' %}
+                <div class="info-content content-item" data-info="{{ nav.var }}">
+                    <div class="text-content typed-content">
+                        <h4 class="type">{{ nav.title }}</h4>
+                    </div>
+                    {% for line in nav.description.details %}
+                        <div class="text-content typed-content">
+                            <p class="type">{{ line.line }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endfor %}
+        {% block bottomRightContent %}{% endblock %}
+    </div>
+</div>

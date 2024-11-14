@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("aligning")
         for(let i = 1; i < tabs.length; i++) {
             let prevTab = tabs[i-1].getBoundingClientRect();
-            console.log(prevTab.height)
             tabs[i].style.top = prevTab.bottom+"px";
         }
     }

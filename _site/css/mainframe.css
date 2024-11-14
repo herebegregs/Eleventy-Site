@@ -13,6 +13,16 @@ html {
   width: 100svw;
   box-sizing: border-box;
   padding: 4svh 4svw;
+  filter: blur(0.8px);
+}
+.mainframe a {
+  color: #00ff00;
+}
+.mainframe a:hover {
+  text-decoration: underline;
+}
+.mainframe a:visited {
+  color: #00ff00;
 }
 .mainframe .display {
   box-sizing: border-box;
@@ -29,53 +39,135 @@ html {
   grid-area: main;
   padding: 2svh 2svw;
 }
-.mainframe .top-right {
-  grid-area: top-right;
-  border: 2px solid #00ff00;
-  align-self: start;
+.mainframe .main-content .text-content {
+  margin-bottom: 20px;
 }
-.mainframe .center-right {
-  grid-area: center-right;
+.mainframe .info-box {
   border: 2px solid #00ff00;
-  align-self: center;
+  border-right: none;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
-.mainframe .bottom-right {
-  grid-area: bottom-right;
-  border: 2px solid #00ff00;
-  align-self: end;
-}
-.mainframe .title-bar {
+.mainframe .info-box .title-bar {
   padding: 10px;
   background-color: #00ff00;
-  color: #000;
 }
-.mainframe .box-content {
+.mainframe .info-box .title-bar h4 {
+  background: linear-gradient(to top, #000000, #000000, #333333, #333333);
+  background-size: cover;
+  background-size: 100% 5px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.mainframe .info-box .box-content {
   padding: 1svh 1svw;
-}
-.mainframe .nav-menu > ul {
-  display: flex;
-  gap: 20px;
-}
-.mainframe .nav-menu > ul li ul {
-  max-height: 0px;
   overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
-  padding-top: 15px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.mainframe .nav-menu > ul li:hover ul {
-  max-height: 50vh;
+.mainframe .info-box .box-content .content-item {
+  display: none;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow: hidden;
+  align-items: flex-start;
+  flex: 1 1 auto;
+  gap: 10px;
 }
-.mainframe .text-content {
-  margin-bottom: 20px;
+.mainframe .info-box .box-content .content-item.active {
+  display: flex;
+}
+.mainframe .top-right {
+  grid-area: top-right;
+  border-top: none;
+  align-self: start;
+}
+.mainframe .center-right {
+  grid-area: center-right;
+  align-self: center;
+}
+.mainframe .bottom-right {
+  grid-area: bottom-right;
+  border-bottom: none;
+  align-self: end;
+}
+.mainframe .typed-content .type {
+  display: inline;
 }
 .mainframe .typed-cursor {
   width: 16px;
   height: 1.1em;
   display: inline-block;
   background-color: #00ff00;
+}
+.mainframe .navigation .type {
+  cursor: pointer;
+}
+.mainframe .navigation .type:hover, .mainframe .navigation .type.active {
+  text-decoration: underline;
+}
+.mainframe #prayer {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
+.mainframe #prayer span {
+  font-size: 12px;
+}
+.mainframe #prayer .typed-cursor {
+  height: 12px;
+  width: 6px;
+}
+.mainframe .portfolio-tabs {
+  display: flex;
+  gap: 20px;
+}
+.mainframe .portfolio-tabs .type {
+  cursor: pointer;
+}
+.mainframe .portfolio-tabs .type:hover, .mainframe .portfolio-tabs .type.active {
+  text-decoration: underline;
+}
+.mainframe .slider-section {
+  width: 100%;
+  text-align: center;
+}
+.mainframe .slider-section .project {
+  display: none;
+  width: 80%;
+}
+.mainframe .slider-section .project .folio-list .folio-slide figure img {
+  max-width: 80%;
+  margin-bottom: 20px;
+}
+.mainframe .slider-section .project .splide__arrows button {
+  background-color: #00ff00;
+  border-radius: 0;
+}
+.mainframe .slider-section .project .splide__arrows button.splide__arrow--prev {
+  left: 0;
+}
+.mainframe .slider-section .project .splide__arrows button.splide__arrow--next {
+  right: 0;
+}
+.mainframe .slider-section .project .splide__pagination {
+  position: relative;
+}
+.mainframe .slider-section .project .splide__pagination li button {
+  background-color: transparent;
+  transition: none;
+  border-radius: 0;
+  border: 1px solid #00ff00;
+}
+.mainframe .slider-section .project .splide__pagination li button.is-active {
+  background-color: #00ff00;
+}
+.mainframe .slider-section .project.active {
+  display: block;
 }
 
 @keyframes scanlines {

@@ -3,9 +3,9 @@ layout: modern.njk
 title: Greg Morris
 ---
 {% for nav in navigation.pages %}
-    {% include "./content/modern-"+nav.var+".njk" %}
+    {% include "../content/modern-"+nav.var+".njk" %}
 {% endfor %}
-{% include "./content/modern-links.njk" %}
+{% include "../content/modern-links.njk" %}
 <div class="backdrop">
     <h1 class="super-size">
         A more modern approach...
