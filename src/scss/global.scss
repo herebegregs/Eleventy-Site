@@ -33,6 +33,14 @@
 	font-weight: 700;
 }
 
+@font-face {
+    font-family: 'Orbitron';
+    font-style: normal; /* See note below */
+    font-weight: 400 900;
+    src: url('/fonts/Orbitron-VariableFont_wght.ttf') format('truetype supports variations'),
+    url('/fonts/Orbitron-VariableFont_wght.ttf') format('truetype-variations');
+  }
+
 html {
     font-size: 62.5%;
 }
@@ -83,6 +91,10 @@ body {
     a {
         text-decoration: none;
     }
+    span.super-size {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
     button {
         -webkit-appearance: none;
         appearance: none;
@@ -94,26 +106,31 @@ body {
     }
     @media (max-width: 768px) {
         h1 {
+            text-align: center;
             font-size: 2.4rem;
             &.super-size {
                 font-size: 2.4rem;
             }
         }
+        text-align: center;
         h2 {
             &.super-size {
                 font-size: 3rem;
             }
         }
         h3{
+            text-align: center;
             &.super-size {
                 font-size: 2.6rem;
             }
         } 
+        text-align: center;
         h4{
             &.super-size {
                 font-size: 2.2rem;
             }
         } 
+        text-align: center;
         h5{
             &.super-size {
                 font-size: 1.8rem;

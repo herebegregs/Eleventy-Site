@@ -43,7 +43,7 @@
                 },
                 {
                     "image": "images/examples/carma/carma6.png",
-                    "caption": "I have recently developed a custom Profile Page builder that allows users to make a truly unique Profile Page - users can stack multiple customisable page sections together to create a personalised page. Each section has dynamic page anchor options, alignment, customisable text and image content as well as section specific customisations such as display statistics or Impact Map details. Each section in the editor can be collapsed and shifted up and down in the page order and has facilities for displaying editing hints for more complex sections. In the interests of security all text input is sanitised before it is saved to our Keystone backend."
+                    "caption": "Custom Profile Page builder - users can stack multiple customisable page sections together to create a personalised page. Each section has dynamic page anchor options, alignment, customisable text and image content as well as section specific customisations such as display statistics or Impact Map details."
                 },
                 {
                     "image": "images/examples/carma/carma10.png",

@@ -7,10 +7,13 @@
 		<link rel="stylesheet" href="/css/noramlize.css">
 		<link rel="stylesheet" href="/css/styles.css">
 		<link rel="stylesheet" href="/css/windows.css">
-		<title>{{ title }}</title>
+		<!-- Grab title from the page data and dump it here -->
+		<title>Greg Morris</title>
 	</head>
 	<body class="vapor">
-		{{ content | safe }}
+		<!-- Grab the content from the page data, dump it here, and mark it as safe -->
+		<!-- Safe docs: https://mozilla.github.io/nunjucks/templating.html#safe -->
+		
 	</body>
 	<script src="/js/windows.js"></script>
 </html>

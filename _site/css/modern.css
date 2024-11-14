@@ -1,6 +1,6 @@
 .modern {
   font-family: "SpaceMono", "Lucida Sans Unicode", "Lucida Sans", Arial, sans-serif;
-  min-height: 100vh;
+  min-height: 100dvh;
   width: 100dvw;
   height: 100dvh;
   overflow: hidden;
@@ -282,13 +282,19 @@
     transform: none;
   }
   .modern .page-tab .page-content {
-    padding: 30px 30px 70px 30px;
-    max-width: calc(100% - 60px);
-    width: calc(100% - 60px);
+    padding: 5px 5px 57px 5px;
+    max-width: calc(100% - 10px);
+    width: calc(100% - 10px);
   }
   .modern .page-tab .page-content .page-wrapper .slider-display {
     flex-direction: column;
     flex-wrap: nowrap;
+  }
+  .modern .page-tab .page-content .page-wrapper .slider-display .project-list {
+    flex-direction: row;
+  }
+  .modern .page-tab .page-content .page-wrapper .slider-display .project-list li {
+    text-align: center;
   }
   .modern .page-tab .page-content .page-wrapper .slider-display .seperator {
     width: 90%;
@@ -310,8 +316,11 @@
     transform: none;
   }
   .modern .page-tab.open .page-content {
-    max-width: calc(100% - 60px);
-    width: calc(100% - 60px);
+    max-width: calc(100% - 10px);
+    width: calc(100% - 10px);
+  }
+  .modern .page-tab.open .page-content .page-wrapper {
+    max-width: calc(100% - 80PX);
   }
 }
 

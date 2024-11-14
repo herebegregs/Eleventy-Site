@@ -1,0 +1,90 @@
+html {
+  font-size: 14px;
+}
+
+.mainframe {
+  background: linear-gradient(to top, #000000, #000000, #333333, #333333);
+  background-size: cover;
+  background-size: 100% 5px;
+  color: #00ff00;
+  animation: scanlines infinite 55s linear;
+  font-family: "Orbitron", sans-serif;
+  height: 100svh;
+  width: 100svw;
+  box-sizing: border-box;
+  padding: 4svh 4svw;
+}
+.mainframe .display {
+  box-sizing: border-box;
+  border: 2px solid #00ff00;
+  height: 100%;
+  width: 100%;
+  filter: drop-shadow(0px 0px 30px #00ff00);
+  display: grid;
+  grid-template-columns: repeat(6, minmax(100px, 1fr));
+  grid-template-rows: repeat(6, minmax(100px, 1fr));
+  grid-template-areas: "main main main main top-right top-right" "main main main main top-right top-right" "main main main main center-right center-right" "main main main main center-right center-right" "main main main main bottom-right bottom-right" "main main main main bottom-right bottom-right";
+}
+.mainframe .main-content {
+  grid-area: main;
+  padding: 2svh 2svw;
+}
+.mainframe .top-right {
+  grid-area: top-right;
+  border: 2px solid #00ff00;
+  align-self: start;
+}
+.mainframe .center-right {
+  grid-area: center-right;
+  border: 2px solid #00ff00;
+  align-self: center;
+}
+.mainframe .bottom-right {
+  grid-area: bottom-right;
+  border: 2px solid #00ff00;
+  align-self: end;
+}
+.mainframe .title-bar {
+  padding: 10px;
+  background-color: #00ff00;
+  color: #000;
+}
+.mainframe .box-content {
+  padding: 1svh 1svw;
+}
+.mainframe .nav-menu > ul {
+  display: flex;
+  gap: 20px;
+}
+.mainframe .nav-menu > ul li ul {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mainframe .nav-menu > ul li:hover ul {
+  max-height: 50vh;
+}
+.mainframe .text-content {
+  margin-bottom: 20px;
+}
+.mainframe .typed-cursor {
+  width: 16px;
+  height: 1.1em;
+  display: inline-block;
+  background-color: #00ff00;
+}
+
+@keyframes scanlines {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 -10px;
+  }
+}
+
+/*# sourceMappingURL=mainframe.css.map */

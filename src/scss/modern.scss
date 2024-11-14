@@ -2,7 +2,7 @@
 
 .modern {
 	font-family: 'SpaceMono', 'Lucida Sans Unicode', 'Lucida Sans', Arial, sans-serif;
-    min-height: 100vh;
+    min-height: 100dvh;
     width: 100dvw;
     height: 100dvh;
     overflow: hidden;
@@ -303,13 +303,19 @@
                 }
             }
             .page-content {
-                padding: 30px 30px 70px 30px;
-                max-width: calc(100% - 60px);
-                    width: calc(100% - 60px);
+                padding: 5px 5px 57px 5px;
+                max-width: calc(100% - 10px);
+                width: calc(100% - 10px);
                 .page-wrapper {
                     .slider-display {
                         flex-direction: column;
                         flex-wrap: nowrap;
+                        .project-list {
+                            flex-direction: row;
+                            li {
+                                text-align: center;
+                            }
+                        }
                         .seperator {
                             width: 90%;
                             height: 1px;
@@ -340,8 +346,11 @@
             &.open {
                 transform: none;
                 .page-content {
-                    max-width: calc(100% - 60px);
-                    width: calc(100% - 60px);
+                    max-width: calc(100% - 10px);
+                    width: calc(100% - 10px);
+                    .page-wrapper {
+                        max-width: calc(100% - 80PX);
+                    }
                 }
             }
         }
