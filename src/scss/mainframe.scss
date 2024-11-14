@@ -2,6 +2,9 @@
 
 html {
     font-size: 14px;
+    @media (max-width: 1024px){
+        font-size: 10px;
+    }
 }
 .mainframe {
     background: linear-gradient(to top, #000000, #000000, #333333, #333333);
@@ -30,6 +33,7 @@ html {
         height: 100%;
         width: 100%;
         filter: drop-shadow(0px 0px 30px #00ff00);
+        overflow: auto;
         display: grid;
         grid-template-columns: repeat(6, minmax(100px, 1fr));
         grid-template-rows: repeat(6, minmax(100px, 1fr));
@@ -44,6 +48,7 @@ html {
     .main-content {
         grid-area: main;
         padding: 2svh 2svw;
+        max-width: calc(100% - 4svw);
         .text-content {
             margin-bottom: 20px;
         }
@@ -145,9 +150,13 @@ html {
     .slider-section {
         width: 100%;
         text-align: center;
+        margin-bottom: 40px;
         .project {
             display: none;
-            width: 80%;
+            .splide__track {
+                width: 80%;
+                margin: 0 auto 40px;
+            }
             .folio-list {
                 .folio-slide {
                     figure {
@@ -186,6 +195,43 @@ html {
             }
             &.active {
                 display: block;
+            }
+        }
+    }
+    @media (max-width: 1024px){
+        .display {
+            grid-template-columns: repeat(4, minmax(100px, 1fr));
+            grid-template-rows: repeat(14, minmax(100px, 1fr));
+            grid-template-areas: 
+                "main main main main"
+                "main main main main"
+                "main main main main"
+                "main main main main"
+                "main main main main"
+                "main main main main"
+                "main main main main"
+                "main main main main"
+                "top-right top-right center-right center-right"
+                "top-right top-right center-right center-right"
+                "top-right top-right center-right center-right"
+                "top-right top-right center-right center-right";
+            #prayer {
+                display: none;
+            }
+            .main-content {
+                max-width: calc(100% - 10svw);
+            }
+            .bottom-right {
+                display: none;
+            }
+            .center-right, .top-right {
+                align-self: start;
+            }
+        }
+        .portfolio-tabs {
+            justify-content: center;
+            .text-content {
+                text-align: center;
             }
         }
     }

@@ -1,6 +1,11 @@
 html {
   font-size: 14px;
 }
+@media (max-width: 1024px) {
+  html {
+    font-size: 10px;
+  }
+}
 
 .mainframe {
   background: linear-gradient(to top, #000000, #000000, #333333, #333333);
@@ -30,6 +35,7 @@ html {
   height: 100%;
   width: 100%;
   filter: drop-shadow(0px 0px 30px #00ff00);
+  overflow: auto;
   display: grid;
   grid-template-columns: repeat(6, minmax(100px, 1fr));
   grid-template-rows: repeat(6, minmax(100px, 1fr));
@@ -38,6 +44,7 @@ html {
 .mainframe .main-content {
   grid-area: main;
   padding: 2svh 2svw;
+  max-width: calc(100% - 4svw);
 }
 .mainframe .main-content .text-content {
   margin-bottom: 20px;
@@ -135,10 +142,14 @@ html {
 .mainframe .slider-section {
   width: 100%;
   text-align: center;
+  margin-bottom: 40px;
 }
 .mainframe .slider-section .project {
   display: none;
+}
+.mainframe .slider-section .project .splide__track {
   width: 80%;
+  margin: 0 auto 40px;
 }
 .mainframe .slider-section .project .folio-list .folio-slide figure img {
   max-width: 80%;
@@ -168,6 +179,31 @@ html {
 }
 .mainframe .slider-section .project.active {
   display: block;
+}
+@media (max-width: 1024px) {
+  .mainframe .display {
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    grid-template-rows: repeat(14, minmax(100px, 1fr));
+    grid-template-areas: "main main main main" "main main main main" "main main main main" "main main main main" "main main main main" "main main main main" "main main main main" "main main main main" "top-right top-right center-right center-right" "top-right top-right center-right center-right" "top-right top-right center-right center-right" "top-right top-right center-right center-right";
+  }
+  .mainframe .display #prayer {
+    display: none;
+  }
+  .mainframe .display .main-content {
+    max-width: calc(100% - 10svw);
+  }
+  .mainframe .display .bottom-right {
+    display: none;
+  }
+  .mainframe .display .center-right, .mainframe .display .top-right {
+    align-self: start;
+  }
+  .mainframe .portfolio-tabs {
+    justify-content: center;
+  }
+  .mainframe .portfolio-tabs .text-content {
+    text-align: center;
+  }
 }
 
 @keyframes scanlines {
