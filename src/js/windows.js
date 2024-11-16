@@ -83,8 +83,8 @@ document.addEventListener('DOMContentLoaded', function(){
     function dragElement(elmnt) {
         var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
         elmnt.querySelector(".title-bar").onmousedown = dragMouseDown;
-
         function dragMouseDown(e) {
+            activateWindow(elmnt)
             e = e || window.event;
             e.preventDefault();
             // get the mouse cursor position at startup:
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 deactivateDetails(explorerIcons[i]);
                 explorerIcons[i].classList.toggle("active");
                 document.querySelector(".details[data-details="+target+"]").classList.add("open");
-                explorerIcons[i].closest(".window-content").classList.add("details-open");
+                setTimeout(()=>{explorerIcons[i].closest(".window-content").classList.add("details-open")}, 200);
             } else {
                 explorerIcons[i].classList.remove("active");
             }

@@ -53,6 +53,8 @@ html {
         padding: 2svh 2svw;
         max-width: calc(100% - 4svw);
         .text-content {
+            display: flex;
+            align-items: flex-end;
             margin-bottom: 20px;
         }
     }

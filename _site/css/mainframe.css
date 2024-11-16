@@ -51,6 +51,8 @@ html {
   max-width: calc(100% - 4svw);
 }
 .mainframe .main-content .text-content {
+  display: flex;
+  align-items: flex-end;
   margin-bottom: 20px;
 }
 .mainframe .info-box {
