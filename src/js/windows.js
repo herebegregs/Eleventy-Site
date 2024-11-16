@@ -43,27 +43,43 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     //desktop icons
 
+    function deactivateDeskIcons() {
+        icons.forEach(icon => {
+            icon.classList.remove("active");
+        })
+    }
+
     let icons = document.querySelectorAll(".desktop button[data-target]");
     for(let i = 0; i < icons.length; i++) {
         let target = icons[i].dataset.target;
         icons[i].addEventListener("click", function() {
-            activeWindows = document.querySelectorAll(".window.open");
-            if(!icons[i].classList.contains("active")){
-                icons[i].classList.toggle("active")
-            } else {
-                if(activeWindows.length > 0){
-                    let lastTop = activeWindows[activeWindows.length -1].offsetTop;
-                    let lastLeft = activeWindows[activeWindows.length -1].offsetLeft;
-                    document.getElementById(target).style.top = (lastTop + 40) + "px";
-                    document.getElementById(target).style.left = (lastLeft + 40) + "px";
-                    document.getElementById(target).style.left = (lastLeft + 40) + "px";
-                    activateWindow(document.getElementById(target));
+            icons.forEach(icon => {
+                if(icon == this){
+                    this.classList.add("active")
+                } else {
+                    icon.classList.remove("active");
                 }
-                document.getElementById(target).classList.add("open");
-                icons[i].classList.remove("active")
-            }
+            })
         })
+        icons[i].addEventListener("dblclick", function() {
+            activeWindows = document.querySelectorAll(".window.open");
+            if(activeWindows.length > 0){
+                let lastTop = activeWindows[activeWindows.length -1].offsetTop;
+                let lastLeft = activeWindows[activeWindows.length -1].offsetLeft;
+                document.getElementById(target).style.top = (lastTop + 40) + "px";
+                document.getElementById(target).style.left = (lastLeft + 40) + "px";
+                document.getElementById(target).style.left = (lastLeft + 40) + "px";
+                activateWindow(document.getElementById(target));
+            }
+            document.getElementById(target).classList.add("open");
+        });
     }
+
+    document.addEventListener("click", function(e){
+        if(!e.target.classList.contains("desktop-icon")){
+            deactivateDeskIcons();
+        }
+    })
     
     //close windows
     let windowClosers = document.querySelectorAll(".window-close");
@@ -129,13 +145,15 @@ document.addEventListener('DOMContentLoaded', function(){
         })
     }
 
-    function deactivateDetails(element) {
+    function deactivateDetails(element, fullClose) {
         for(let i = 0; i < explorerIcons.length; i++) {
             let window = element.closest(".window-content");
             let detailPane = window.querySelector(".details.open");
+            if(fullClose === true){
+                window.classList.remove("details-open");
+            }
             explorerIcons[i].classList.remove("active");
             detailPane && detailPane.classList.remove("open");
-            window.classList.remove("details-open")
         }
     }
     //explorer icons
@@ -144,33 +162,37 @@ document.addEventListener('DOMContentLoaded', function(){
     for(let i = 0; i < explorerIcons.length; i++) {
         let target = explorerIcons[i].dataset.details;
         explorerIcons[i].addEventListener("click", function(e) {
-            // activeWindows = document.querySelectorAll(".window.open");
-            if(!explorerIcons[i].classList.contains("active")){
-                e.preventDefault();
-                deactivateDetails(explorerIcons[i]);
-                explorerIcons[i].classList.toggle("active");
+            e.preventDefault();
+            if(!this.classList.contains("active")){
+                let window = explorerIcons[i].closest(".window-content");
+                deactivateDetails(this, false);
+                this.classList.toggle("active");
                 document.querySelector(".details[data-details="+target+"]").classList.add("open");
-                setTimeout(()=>{explorerIcons[i].closest(".window-content").classList.add("details-open")}, 200);
+                // setTimeout(()=>{window.classList.add("details-open")}, 200);
+                !window.classList.contains("details-open") && setTimeout(()=>{window.classList.add("details-open")}, 200);
+
             } else {
                 explorerIcons[i].classList.remove("active");
             }
-        })
+        });
+        explorerIcons[i].addEventListener("dblclick", function(e) {
+            window.location = explorerIcons[i].href
+        });
     }
 
     let explorerPanes = document.querySelectorAll(".explorer-pane");
     explorerPanes.forEach(pane =>{
         pane.addEventListener("click", function(e) {
-            if(e.target === e.currentTarget){
-                deactivateDetails(pane);
+            if(!e.target.classList.contains("explorer-icon")){
+                deactivateDetails(pane, true);
             }
         })
-    })
+    });
 
     document.querySelectorAll(".collapser").forEach(collapser => {
         collapser.addEventListener("click", function(e) {
             collapser.classList.toggle("active");
             let activeProject = collapser.closest("li[data-project").dataset.project;
-            console.log(activeProject)
             document.querySelector("ul[data-project="+activeProject+"]").classList.toggle("collapsed");
         });
     });

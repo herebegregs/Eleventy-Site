@@ -1,0 +1,53 @@
+html {
+  font-family: "Times New Roman", Times, serif;
+  color: #fff;
+  text-shadow: 0 0 30px #000;
+  background: linear-gradient(rgba(246, 171, 171, 0.6), rgba(246, 171, 171, 0.6)), url(../images/vapor/cloud.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.vapor {
+  padding: 150px 20px;
+  margin: 0;
+  background-position: -3px;
+  background-size: 80px 80px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.3) 3px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 3px, transparent 1px);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  height: 100svh;
+  width: 100svw;
+}
+.vapor:after {
+  content: "";
+  display: inline-block;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  min-height: 150px;
+  background: url(../images/vapor/overlayBottom.png) no-repeat center center;
+  opacity: 0.4;
+}
+.vapor:before {
+  content: "";
+  display: inline-block;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  min-height: 150px;
+  background: url(../images/vapor/overlayTop.png) no-repeat center center;
+  opacity: 0.4;
+}
+.vapor a {
+  text-decoration: underline;
+}
+.vapor #header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  width: 100%;
+}
+
+/*# sourceMappingURL=vapor.css.map */

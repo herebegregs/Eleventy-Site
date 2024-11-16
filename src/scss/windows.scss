@@ -189,6 +189,7 @@
         gap: 10px;
         img, p {
             border: 1px solid transparent;
+            pointer-events: none;
         }
         p {
             color: #fff;
@@ -251,6 +252,7 @@
                 justify-content: center;
                 border: 2px solid;
                 border-color: #ffffff $win-menu-dark $win-menu-dark #ffffff;
+                box-sizing: content-box;
                 svg {
                     height: 13px;
                 }
@@ -283,6 +285,7 @@
                     gap: 10px;
                     img, p {
                         border: 1px solid transparent;
+                        pointer-events: none;
                     }
                     p {
                         color: #000;

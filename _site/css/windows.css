@@ -172,6 +172,7 @@
 }
 .windows .desktop-icon img, .windows .desktop-icon p {
   border: 1px solid transparent;
+  pointer-events: none;
 }
 .windows .desktop-icon p {
   color: #fff;
@@ -233,6 +234,7 @@
   justify-content: center;
   border: 2px solid;
   border-color: #ffffff #808080 #808080 #ffffff;
+  box-sizing: content-box;
 }
 .windows .window .title-bar .window-close svg {
   height: 13px;
@@ -267,6 +269,7 @@
 }
 .windows .window .window-content .explorer-pane .explorer-icon img, .windows .window .window-content .explorer-pane .explorer-icon p {
   border: 1px solid transparent;
+  pointer-events: none;
 }
 .windows .window .window-content .explorer-pane .explorer-icon p {
   color: #000;
