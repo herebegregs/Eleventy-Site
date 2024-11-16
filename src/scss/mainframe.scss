@@ -6,6 +6,9 @@ html {
         font-size: 10px;
     }
 }
+::-webkit-scrollbar {
+    display: none;
+} //the scrollbar.
 .mainframe {
     background: linear-gradient(to top, #000000, #000000, #333333, #333333);
     background-size: cover;
@@ -199,33 +202,35 @@ html {
         }
     }
     @media (max-width: 1024px){
+        .typed-cursor {
+            width: 9px;
+        }
         .display {
-            grid-template-columns: repeat(4, minmax(100px, 1fr));
-            grid-template-rows: repeat(14, minmax(100px, 1fr));
-            grid-template-areas: 
-                "main main main main"
-                "main main main main"
-                "main main main main"
-                "main main main main"
-                "main main main main"
-                "main main main main"
-                "main main main main"
-                "main main main main"
-                "top-right top-right center-right center-right"
-                "top-right top-right center-right center-right"
-                "top-right top-right center-right center-right"
-                "top-right top-right center-right center-right";
+            display: flex;
+            flex-direction: column;
             #prayer {
-                display: none;
+                text-align: left;
             }
             .main-content {
-                max-width: calc(100% - 10svw);
+                flex-grow: 1;
+                position: relative;
             }
             .bottom-right {
                 display: none;
             }
-            .center-right, .top-right {
-                align-self: start;
+            .info-box {
+                width: 100%;
+                .operation-content {
+                    margin-top: auto;
+                    display: flex;
+                    gap: 20px;
+                }
+                .menu-content, .operation-content{
+                    flex-direction: row;
+                    &.active {
+                        display: flex;
+                    }
+                }
             }
         }
         .portfolio-tabs {

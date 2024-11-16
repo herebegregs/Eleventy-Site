@@ -7,6 +7,10 @@ html {
   }
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .mainframe {
   background: linear-gradient(to top, #000000, #000000, #333333, #333333);
   background-size: cover;
@@ -181,22 +185,36 @@ html {
   display: block;
 }
 @media (max-width: 1024px) {
+  .mainframe .typed-cursor {
+    width: 9px;
+  }
   .mainframe .display {
-    grid-template-columns: repeat(4, minmax(100px, 1fr));
-    grid-template-rows: repeat(14, minmax(100px, 1fr));
-    grid-template-areas: "main main main main" "main main main main" "main main main main" "main main main main" "main main main main" "main main main main" "main main main main" "main main main main" "top-right top-right center-right center-right" "top-right top-right center-right center-right" "top-right top-right center-right center-right" "top-right top-right center-right center-right";
+    display: flex;
+    flex-direction: column;
   }
   .mainframe .display #prayer {
-    display: none;
+    text-align: left;
   }
   .mainframe .display .main-content {
-    max-width: calc(100% - 10svw);
+    flex-grow: 1;
+    position: relative;
   }
   .mainframe .display .bottom-right {
     display: none;
   }
-  .mainframe .display .center-right, .mainframe .display .top-right {
-    align-self: start;
+  .mainframe .display .info-box {
+    width: 100%;
+  }
+  .mainframe .display .info-box .operation-content {
+    margin-top: auto;
+    display: flex;
+    gap: 20px;
+  }
+  .mainframe .display .info-box .menu-content, .mainframe .display .info-box .operation-content {
+    flex-direction: row;
+  }
+  .mainframe .display .info-box .menu-content.active, .mainframe .display .info-box .operation-content.active {
+    display: flex;
   }
   .mainframe .portfolio-tabs {
     justify-content: center;
