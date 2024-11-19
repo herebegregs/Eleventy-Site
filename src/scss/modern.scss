@@ -64,7 +64,7 @@
             background-color: #000;
             z-index: 0;
             flex-grow: 1;
-            height: calc(100% - 60px);
+            height: 100svh;
             background: rgba( 102, 67, 204, 0.25 );
             border: 1px solid rgba( 255, 255, 255, 0.18 );
             padding: 30px  30px 30px 72px;
@@ -73,12 +73,10 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            max-width: calc(100% - 102px);
-            width: calc(100% - 102px);
+            width: 100%;
             overflow: hidden;
             .page-wrapper {
                 padding: 0;
-                max-width: 0;
                 opacity: 0;
                 border-radius: 40px;
                 background: #1e293b;
@@ -88,7 +86,8 @@
                 flex-direction: column;
                 gap: 30px;
                 transition: $transition-std;
-                max-height: calc(100% - 60PX);
+                max-height: calc(100% - 60px);
+                max-width: calc(100% - 60px);
                 .seperator {
                     height: 90%;
                     width: 1px;
@@ -221,7 +220,6 @@
                 .page-wrapper {
                     opacity: 1;
                     padding: 40px;
-                    max-width: calc(80% - 60px);
                 }
             }
         }
@@ -286,7 +284,7 @@
         }
         .backdrop {
             h1 {
-                max-width: 50dvw;
+                max-width: 80dvw;
             }
         }
         .page-tab {
@@ -304,12 +302,15 @@
             }
             .page-content {
                 padding: 5px 5px 57px 5px;
-                max-width: calc(100% - 10px);
-                width: calc(100% - 10px);
+                max-width: 100%;
+                width: 100%;
                 .page-wrapper {
+                    max-width: calc(100% - 10PX);
+                    max-height: calc(100% - 10PX);
                     .slider-display {
                         flex-direction: column;
                         flex-wrap: nowrap;
+                        flex-grow: 1;
                         .project-list {
                             flex-direction: row;
                             li {
@@ -324,16 +325,14 @@
                             width: 100%;
                             max-width: 100%;
                             flex-basis: auto;
+                            flex-grow: 1;
+                            margin-bottom: 30px;
                             .project {
-                                .folio-list {
-                                    .folio-slide {
-                                        figure {
-                                            figcaption {
-                                                max-height: 200%;
-                                                overflow-y: auto;
-                                            }
-                                        }
-                                    }
+                                .splide__arrows {
+                                    bottom: -45px;
+                                }
+                                .splide__pagination {
+                                    bottom: -50px;
                                 }
                             }
                         }
@@ -345,13 +344,6 @@
             }
             &.open {
                 transform: none;
-                .page-content {
-                    max-width: calc(100% - 10px);
-                    width: calc(100% - 10px);
-                    .page-wrapper {
-                        max-width: calc(100% - 80PX);
-                    }
-                }
             }
         }
     }

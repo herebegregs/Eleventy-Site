@@ -62,7 +62,7 @@
   background-color: #000;
   z-index: 0;
   flex-grow: 1;
-  height: calc(100% - 60px);
+  height: 100svh;
   background: rgba(102, 67, 204, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 30px 30px 30px 72px;
@@ -71,13 +71,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: calc(100% - 102px);
-  width: calc(100% - 102px);
+  width: 100%;
   overflow: hidden;
 }
 .modern .page-tab .page-content .page-wrapper {
   padding: 0;
-  max-width: 0;
   opacity: 0;
   border-radius: 40px;
   background: #1e293b;
@@ -87,7 +85,8 @@
   flex-direction: column;
   gap: 30px;
   transition: all 0.2s ease-in-out, display 0s allow-discrete;
-  max-height: calc(100% - 60PX);
+  max-height: calc(100% - 60px);
+  max-width: calc(100% - 60px);
 }
 .modern .page-tab .page-content .page-wrapper .seperator {
   height: 90%;
@@ -210,7 +209,6 @@
 .modern .page-tab.open .page-content .page-wrapper {
   opacity: 1;
   padding: 40px;
-  max-width: calc(80% - 60px);
 }
 .modern .page-tab:first-of-type .page-edge {
   margin-top: 0;
@@ -265,7 +263,7 @@
     display: flex;
   }
   .modern .backdrop h1 {
-    max-width: 50dvw;
+    max-width: 80dvw;
   }
   .modern .page-tab {
     flex-direction: column-reverse;
@@ -283,12 +281,17 @@
   }
   .modern .page-tab .page-content {
     padding: 5px 5px 57px 5px;
-    max-width: calc(100% - 10px);
-    width: calc(100% - 10px);
+    max-width: 100%;
+    width: 100%;
+  }
+  .modern .page-tab .page-content .page-wrapper {
+    max-width: calc(100% - 10PX);
+    max-height: calc(100% - 10PX);
   }
   .modern .page-tab .page-content .page-wrapper .slider-display {
     flex-direction: column;
     flex-wrap: nowrap;
+    flex-grow: 1;
   }
   .modern .page-tab .page-content .page-wrapper .slider-display .project-list {
     flex-direction: row;
@@ -304,23 +307,20 @@
     width: 100%;
     max-width: 100%;
     flex-basis: auto;
+    flex-grow: 1;
+    margin-bottom: 30px;
   }
-  .modern .page-tab .page-content .page-wrapper .slider-display .slider-section .project .folio-list .folio-slide figure figcaption {
-    max-height: 200%;
-    overflow-y: auto;
+  .modern .page-tab .page-content .page-wrapper .slider-display .slider-section .project .splide__arrows {
+    bottom: -45px;
+  }
+  .modern .page-tab .page-content .page-wrapper .slider-display .slider-section .project .splide__pagination {
+    bottom: -50px;
   }
   .modern .page-tab .page-content .flyout {
     display: none;
   }
   .modern .page-tab.open {
     transform: none;
-  }
-  .modern .page-tab.open .page-content {
-    max-width: calc(100% - 10px);
-    width: calc(100% - 10px);
-  }
-  .modern .page-tab.open .page-content .page-wrapper {
-    max-width: calc(100% - 80PX);
   }
 }
 

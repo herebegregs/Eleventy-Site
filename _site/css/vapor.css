@@ -1,7 +1,6 @@
 html {
   font-family: "Times New Roman", Times, serif;
   color: #fff;
-  text-shadow: 0 0 30px #000;
   background: linear-gradient(rgba(246, 171, 171, 0.6), rgba(246, 171, 171, 0.6)), url(../images/vapor/cloud.jpg) no-repeat center center fixed;
   background-size: cover;
 }
