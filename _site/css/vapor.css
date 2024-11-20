@@ -6,7 +6,7 @@ html {
 }
 
 .vapor {
-  padding: 150px 20px;
+  padding: 150px 0;
   margin: 0;
   background-position: -3px;
   background-size: 80px 80px;
@@ -45,8 +45,43 @@ html {
 .vapor #header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px 40px;
   width: 100%;
+  color: #15f4ff;
+  background-color: #fedde8;
+}
+.vapor #header .header-right {
+  max-width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.vapor #header .header-right a {
+  color: #B967FF;
+  font-family: "w95";
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  word-break: keep-all;
+}
+.vapor .banner {
+  padding: 150px 30px 20px;
+  display: flex;
+  align-items: center;
+  background: #FF71CE;
+  background: linear-gradient(0deg, #B967FF 0%, #B967FF 60%, rgba(185, 103, 255, 0.2) 100%);
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+.vapor .banner .banner-content {
+  max-width: 80%;
+  color: #fedde8;
+}
+.vapor .banner figure {
+  position: absolute;
+  margin-right: 50px;
+  left: 0;
 }
 
 /*# sourceMappingURL=vapor.css.map */

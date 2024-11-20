@@ -2,3 +2,34 @@
 layout: vapor.njk
 title: Greg Morris
 ---
+<div class="banner">
+    <figure>
+        <img src="../images/vapor/statuette.png" alt="D a v i d">
+    </figure>
+    <div class="banner-content">
+        <h1 class="super-size">{{about.heading}} - {{about.description}}</h1>
+        <p>{{about.subheading}}</p>
+        <h3>I'ms still building this bit, check back later!</h3>
+    </div>
+    {# <div class="portfolio">
+        <h2>My work</h2>
+        {%for project in portfolio.projects %}
+            <section class="project splide{% if loop.index === 1%} active{% endif %}" aria-label="{{project.title}}" data-project="{{project.var}}">
+                <div class="splide__track">
+                    <ul class="folio-list splide__list">
+                        {%for example in  project.examples%}
+                            <li class="folio-slide splide__slide" data-target="{{project.var}}">
+                                <figure>
+                                    <img src="/{{example.image}}" alt="{{project.var}}{{ loop.index }}">
+                                    <figcaption>
+                                        <span class="fig-type">{{example.caption}}</span>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </section>
+        {%endfor %}
+    </div> #}
+</div>

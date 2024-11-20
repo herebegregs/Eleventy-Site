@@ -63,10 +63,10 @@
                 "title": "Carma Impact Hub",
                 "details": [
                     {
-                        "line":"Email: greg.morris@carma.earth"
+                        "line":"Email: livedemo@carma.earth"
                     },
                     {
-                        "line": "Password: greg-with-carma"
+                        "line": "Password: livedemo-with-carma"
                     },
                     {
                         "line": "My current work, built in Next.js with a Keystone.js backend"
