@@ -95,7 +95,7 @@
         },
         {
             "title": "Github",
-            "url": "https://www.github.com",
+            "url": "https://github.com/herebegregs",
             "var": "github",
             "target": "_blank",
             "iconWindows": "images/github.png",
